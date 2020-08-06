@@ -3,3 +3,7 @@ img {
     height: 400px;
     background-size: cover;
 }
+
+ngb-carousel {
+    outline: none;
+}

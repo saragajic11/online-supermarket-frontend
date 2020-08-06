@@ -17,3 +17,9 @@
 .navbar-default .navbar-nav > li > a:focus {
     border-bottom:0.7px solid #fff
 }
+
+.card {
+    display:inline-block;
+    margin-inline-start: 30px;
+    padding: 5px;
+}
