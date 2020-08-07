@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Category } from '../../model/category.model';
 import {DomSanitizer} from '@angular/platform-browser';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-category-item',
@@ -9,7 +10,7 @@ import {DomSanitizer} from '@angular/platform-browser';
 })
 export class CategoryItemComponent implements OnInit {
 
-  constructor(public _DomSanitizationService: DomSanitizer) { }
+  constructor(public _DomSanitizationService: DomSanitizer, private route: ActivatedRoute, private router: Router) { }
   @Input()
   category: Category;
   image: any;
@@ -17,6 +18,10 @@ export class CategoryItemComponent implements OnInit {
   ngOnInit(): void {
     let objectURL = 'data:image/jpeg;base64,' + this.category.categoryImage;
     this.image = this._DomSanitizationService.bypassSecurityTrustUrl(objectURL);
+  }
+
+  onCategorySelected(id: number) {
+    this.router.navigate(['/products', id])
   }
 
 }

@@ -8,7 +8,10 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { SliderComponent } from './slider/slider.component';
 import { CategoryComponent } from './category/category.component';
 import { CategoryItemComponent } from './category/category-item/category-item.component';
-import {HttpClientModule} from '@angular/common/http'
+import {HttpClientModule} from '@angular/common/http';
+import { ProductComponent } from './product/product.component';
+import { FilterComponent } from './product/filter/filter.component';
+import { ProductItemComponent } from './product/product-item/product-item.component'
 
 
 @NgModule({
@@ -17,7 +20,10 @@ import {HttpClientModule} from '@angular/common/http'
     HeaderComponent,
     SliderComponent,
     CategoryComponent,
-    CategoryItemComponent
+    CategoryItemComponent,
+    ProductComponent,
+    FilterComponent,
+    ProductItemComponent
   ],
   imports: [
     BrowserModule,

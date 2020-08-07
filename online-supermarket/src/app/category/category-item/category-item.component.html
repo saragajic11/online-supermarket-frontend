@@ -1,4 +1,4 @@
-<div class="card mb-4 box-shadow" style='text-align:center;width: 18rem;'>
+<div class="card mb-4 box-shadow" style='text-align:center;width: 18rem;' (click)="onCategorySelected(category.id)">
     <img class="card-img-top" [src]="image" height="100%">
     <div class="card-body">
         <p class="card-text" style="height: 1rem;"><strong>{{category.categoryName}}</strong></p>

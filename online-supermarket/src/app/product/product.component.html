@@ -1,0 +1,8 @@
+<div class="row" style="margin-top: 20px; margin-right: 0;">
+    <div class="col-md-3">
+        <app-filter></app-filter>
+    </div>
+    <div class="col-md-7">
+        <app-product-item *ngFor="let productEl of products" [productItem]="productEl"></app-product-item>
+    </div>
+</div>

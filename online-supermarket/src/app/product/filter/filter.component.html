@@ -1,0 +1,12 @@
+<div class="container">
+    <h6>Categories</h6>
+    <ul>
+        <li *ngFor="let category of categories">{{category.categoryName}}
+            <ul>
+                <li *ngFor="let subcategory of category.subcategoryDtos">
+                    {{subcategory.name}}
+                </li>
+            </ul>
+        </li>
+    </ul>
+</div>
