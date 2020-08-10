@@ -1,1 +1,21 @@
-<p>product-item works!</p>
+<div class="card mb-4 box-shadow" style='text-align:center;width: 18rem; cursor: pointer;'>
+    <img class="card-img-top" [src]="image" height="100%" style="margin-top: 10px;">
+    <button mat-mini-fab color="warn" style="margin-bottom: 8px;" class="btn btn-lg btn-heart">
+        <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-heart-fill" fill="currentColor"
+            xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z" />
+        </svg>
+    </button>
+    <div class="card-body">
+        <p class="card-text" style="height: 1rem;"><strong>{{productItem.productName}}</strong></p>
+        <p class="card-text">{{productItem.productPrice + ",00 RSD"}}</p>
+        <div class="row justify-content-center" style="text-align: center;">
+            <button type="button" class="btn btn-md btn-outline-secondary" style="width: 8em;">
+                View details
+            </button>
+            <button type="button" class="btn btn-md button1 buttonH btn-outline-secondary" style="width: 8em;">
+                Add to cart
+            </button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,13 @@
+img {
+    float: center;
+    width:  200px;
+    height: 150px;
+    object-fit: contain;
+    position: relative;
+    left: 30px;
+}
+
+.btn-heart {
+  position: relative;
+  bottom: 55px;
+}

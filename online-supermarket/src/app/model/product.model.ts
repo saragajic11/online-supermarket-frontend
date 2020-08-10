@@ -7,7 +7,7 @@ export class Product {
     public productDescription: string;
     public productPrice: number;
     public amount: number;
-    public image: string;
+    public imageUrl: string;
     public isOnDiscount: boolean;
     public producerDto: Producer;
     public subcategoryDto: Subcategory;
@@ -18,7 +18,7 @@ export class Product {
         this.productDescription = description;
         this.productPrice = price;
         this.amount = amount;
-        this.image = image;
+        this.imageUrl = image;
         this.isOnDiscount = isOnDiscount;
         this.producerDto = producerDto;
         this.subcategoryDto = subcategoryDto;
