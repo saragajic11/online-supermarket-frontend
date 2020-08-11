@@ -11,7 +11,11 @@ import { CategoryItemComponent } from './category/category-item/category-item.co
 import {HttpClientModule} from '@angular/common/http';
 import { ProductComponent } from './product/product.component';
 import { FilterComponent } from './product/filter/filter.component';
-import { ProductItemComponent } from './product/product-item/product-item.component'
+import { ProductItemComponent } from './product/product-item/product-item.component';
+import { SupplierComponent } from './supplier/supplier.component'
+import { MatTableModule } from '@angular/material/table';
+import { AddSupplierComponent } from './supplier/add-supplier/add-supplier.component';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -23,13 +27,18 @@ import { ProductItemComponent } from './product/product-item/product-item.compon
     CategoryItemComponent,
     ProductComponent,
     FilterComponent,
-    ProductItemComponent
+    ProductItemComponent,
+    SupplierComponent,
+    AddSupplierComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NgbModule,
-    HttpClientModule
+    HttpClientModule,
+    MatTableModule,
+    BrowserModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
