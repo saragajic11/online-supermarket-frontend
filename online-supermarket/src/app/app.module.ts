@@ -19,6 +19,9 @@ import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
 import { EditSupplierComponent } from './supplier/edit-supplier/edit-supplier.component';
+import { ProducerComponent } from './producer/producer.component';
+import { AddProducerComponent } from './producer/add-producer/add-producer.component';
+import { EditProducerComponent } from './producer/edit-producer/edit-producer.component';
 
 
 @NgModule({
@@ -33,7 +36,10 @@ import { EditSupplierComponent } from './supplier/edit-supplier/edit-supplier.co
     ProductItemComponent,
     SupplierComponent,
     AddSupplierComponent,
-    EditSupplierComponent
+    EditSupplierComponent,
+    ProducerComponent,
+    AddProducerComponent,
+    EditProducerComponent
   ],
   imports: [
     BrowserModule,

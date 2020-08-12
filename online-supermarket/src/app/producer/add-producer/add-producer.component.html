@@ -1,0 +1,20 @@
+<div class="row wrapper" style="margin-right: 0;">
+    <div class="col-xs-12">
+        <form #producerForm="ngForm" (ngSubmit)="onSubmit(producerForm)">
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input id="name" class="form-control" ngModel name="name" required />
+            </div>
+            <div class="form-group">
+                <label for="contact">Contact</label>
+                <input id="contact" class="form-control" ngModel name="contact" required />
+            </div>
+            <div style="margin-bottom: 20px; text-align: center;">
+                <button class="btn-add" type="submit" [disabled]="!producerForm.valid">
+                    Add Producer
+                </button>
+            </div>
+        </form>
+
+    </div>
+</div>
