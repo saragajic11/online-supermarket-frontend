@@ -12,18 +12,18 @@
 
     <ng-container matColumnDef="supplierContact">
         <th mat-header-cell *matHeaderCellDef> Contact </th>
-        <td mat-cell *matCellDef="let element"> {{element.supplierLastname}} </td>
+        <td mat-cell *matCellDef="let element"> {{element.contact}} </td>
     </ng-container>
 
     <ng-container matColumnDef="edit">
         <th mat-header-cell *matHeaderCellDef></th>
-        <td mat-cell *matCellDef="let element"><img src="../../assets/pencil.png"
+        <td mat-cell *matCellDef="let element" (click)="onEditSupplierClicked(element.id)"><img src="../../assets/pencil.png"
                 style="width: 20px; height: 20px; margin-bottom: 2px; cursor: pointer;" /></td>
     </ng-container>
 
     <ng-container matColumnDef="delete">
         <th mat-header-cell *matHeaderCellDef></th>
-        <td mat-cell *matCellDef="let element"><img src="../../assets/bin.png"
+        <td mat-cell *matCellDef="let element" (click)="onDeleteSupplierClicked(element.id)"><img src="../../assets/bin.png"
                 style="width: 20px; height: 20px; margin-bottom: 2px; cursor: pointer;" /></td>
     </ng-container>
 

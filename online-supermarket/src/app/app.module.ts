@@ -16,6 +16,9 @@ import { SupplierComponent } from './supplier/supplier.component'
 import { MatTableModule } from '@angular/material/table';
 import { AddSupplierComponent } from './supplier/add-supplier/add-supplier.component';
 import { FormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ToastrModule } from 'ngx-toastr';
+import { EditSupplierComponent } from './supplier/edit-supplier/edit-supplier.component';
 
 
 @NgModule({
@@ -29,7 +32,8 @@ import { FormsModule } from '@angular/forms';
     FilterComponent,
     ProductItemComponent,
     SupplierComponent,
-    AddSupplierComponent
+    AddSupplierComponent,
+    EditSupplierComponent
   ],
   imports: [
     BrowserModule,
@@ -37,8 +41,9 @@ import { FormsModule } from '@angular/forms';
     NgbModule,
     HttpClientModule,
     MatTableModule,
-    BrowserModule,
-    FormsModule
+    FormsModule,
+    BrowserAnimationsModule,
+    ToastrModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
