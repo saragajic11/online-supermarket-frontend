@@ -16,4 +16,8 @@ export class ProductService {
   getProductByBarCode(barCode: string) {
     return this.httpClient.get<Product>("http://localhost:8083/products/" + barCode);
   }
+
+  deleteProduct(barCode: string) {
+    return this.httpClient.delete("http://localhost:8083/products/"+ barCode);
+  }
 }

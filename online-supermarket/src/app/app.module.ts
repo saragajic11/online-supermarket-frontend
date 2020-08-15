@@ -24,6 +24,9 @@ import { AddProducerComponent } from './producer/add-producer/add-producer.compo
 import { EditProducerComponent } from './producer/edit-producer/edit-producer.component';
 import { ProductDetailsComponent } from './product/product-details/product-details.component';
 import { DropdownDirective } from './shared/dropdown.directive';
+import {MatDialogModule} from '@angular/material/dialog';
+import { DeleteDialogComponent } from './shared/delete-dialog/delete-dialog.component';
+import { MatButtonModule } from '@angular/material/button';
 
 
 @NgModule({
@@ -43,7 +46,8 @@ import { DropdownDirective } from './shared/dropdown.directive';
     AddProducerComponent,
     EditProducerComponent,
     ProductDetailsComponent,
-    DropdownDirective
+    DropdownDirective,
+    DeleteDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -53,6 +57,8 @@ import { DropdownDirective } from './shared/dropdown.directive';
     MatTableModule,
     FormsModule,
     BrowserAnimationsModule,
+    MatDialogModule,
+    MatButtonModule,
     ToastrModule.forRoot()
   ],
   providers: [],
