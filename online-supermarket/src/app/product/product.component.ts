@@ -25,4 +25,8 @@ export class ProductComponent implements OnInit {
     })
   }
 
+  onAddNewProductClicked() {
+    this.router.navigate(['product/new']);
+  }
+
 }
