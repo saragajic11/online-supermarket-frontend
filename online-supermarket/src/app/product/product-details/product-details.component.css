@@ -1,0 +1,19 @@
+.image-details {
+    height: 300px;
+    width: 400px;
+    float: center;
+    object-fit: contain;
+}
+
+.details-container {
+    display: flex;
+    align-items: center;
+    justify-content:center;
+    margin-top: 50px;
+}
+
+h2, h3 {display:inline;}
+
+.data {
+    margin-inline-start: 10px;
+}

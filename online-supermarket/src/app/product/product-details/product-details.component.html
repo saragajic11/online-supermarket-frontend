@@ -1,0 +1,35 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-6 details-container">
+            <img [src]="image" class="image-details" style="margin-top: 10px;">
+        </div>
+        <div class="col-md-3" style="margin-top: 50px;">
+            <h1>{{product?.productName}}</h1>
+            <hr>
+            <div>
+                <h2>{{product?.productPrice}} RSD</h2>
+            </div>
+            <div>
+                <h2>Product bar code:</h2>
+                <h3 class="data">{{product?.barCode}}</h3>
+            </div>
+            <div>
+                <h2>Product producer:</h2>
+                <h3 class="data">{{product?.producerDto?.producerName}}</h3>
+            </div>
+            <div>
+                <h2>Description:</h2>
+                <h3 class="data">{{product?.productDescription}}</h3>
+            </div>
+            <div class="dropdown" style="margin-bottom: 70px; margin-top: 20px;">
+                <button type="button" class="btn-manage dropdown-toggle" data-toggle="dropdown" id="dropdownMenuButton" >
+                    Manage <span class="caret"></span>
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <a style="cursor: pointer;" class="dropdown-item" (click)="onEditProductClicked(product.barCode)">Edit product</a>
+                    <a style="cursor: pointer;" class="dropdown-item" (click)="onDeleteProductClicked(product.barCode)">Delete product</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

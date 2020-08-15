@@ -12,4 +12,8 @@ export class ProductService {
   getProductsByCategory(id: number) {
     return this.httpClient.get<Product[]>('http://localhost:8083/products/byCategory/' + id);
   }
+
+  getProductByBarCode(barCode: string) {
+    return this.httpClient.get<Product>("http://localhost:8083/products/" + barCode);
+  }
 }

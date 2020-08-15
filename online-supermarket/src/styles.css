@@ -29,6 +29,14 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     border-radius: 30px;
 }
 
+.btn-manage {
+    background-color: #6bc5b2;
+    color: white;
+    padding: 10px;
+    border: 0px;
+    border-radius: 2px;
+}
+
 .wrapper {
     display: flex;
     justify-content: center;

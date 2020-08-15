@@ -10,7 +10,7 @@
         <p class="card-text" style="height: 1rem;"><strong>{{productItem.productName}}</strong></p>
         <p class="card-text">{{productItem.productPrice + ",00 RSD"}}</p>
         <div class="row justify-content-center" style="text-align: center;">
-            <button type="button" class="btn btn-md btn-outline-secondary" style="width: 8em;">
+            <button type="button" class="btn btn-md btn-outline-secondary" style="width: 8em;" (click)="onViewDetailsClicked(productItem.barCode)">
                 View details
             </button>
             <button type="button" class="btn btn-md button1 buttonH btn-outline-secondary" style="width: 8em;">

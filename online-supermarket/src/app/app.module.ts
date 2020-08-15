@@ -22,6 +22,8 @@ import { EditSupplierComponent } from './supplier/edit-supplier/edit-supplier.co
 import { ProducerComponent } from './producer/producer.component';
 import { AddProducerComponent } from './producer/add-producer/add-producer.component';
 import { EditProducerComponent } from './producer/edit-producer/edit-producer.component';
+import { ProductDetailsComponent } from './product/product-details/product-details.component';
+import { DropdownDirective } from './shared/dropdown.directive';
 
 
 @NgModule({
@@ -39,7 +41,9 @@ import { EditProducerComponent } from './producer/edit-producer/edit-producer.co
     EditSupplierComponent,
     ProducerComponent,
     AddProducerComponent,
-    EditProducerComponent
+    EditProducerComponent,
+    ProductDetailsComponent,
+    DropdownDirective
   ],
   imports: [
     BrowserModule,
