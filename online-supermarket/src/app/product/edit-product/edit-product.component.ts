@@ -84,7 +84,7 @@ export class EditProductComponent implements OnInit {
       this.selectedProducer = producer;
       this.subcategoryService.getSubcategoryById(value.subcategory).subscribe(subcategory => {
         this.selectedSubcategory = subcategory;
-        const updatedProduct = new PostProduct(this.barCode, value.name, value.description, value.price, value.amount, value.isOnDiscount, this.selectedProducer, this.selectedSubcategory, value.discount != undefined ? value.discount : null)
+        const updatedProduct = new PostProduct(this.barCode, value.name, value.description, value.price, value.amount, value.onDiscount, this.selectedProducer, this.selectedSubcategory, value.discount != undefined ? value.discount : null)
         this.productService.updateProduct(this.barCode, updatedProduct).subscribe(() => {
           if (this.selectedFile != undefined) {
             const formData = new FormData();
