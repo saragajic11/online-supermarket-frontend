@@ -43,7 +43,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 }
 
 .img-preview {
-    width: 150px;
-    height: 100px;
+    width: 250px;
+    height: 200px;
     object-fit: contain;
 }

@@ -10,6 +10,7 @@ import { AddProducerComponent } from './producer/add-producer/add-producer.compo
 import { EditProducerComponent } from './producer/edit-producer/edit-producer.component';
 import { ProductDetailsComponent } from './product/product-details/product-details.component';
 import { AddProductComponent } from './product/add-product/add-product.component';
+import { EditProductComponent } from './product/edit-product/edit-product.component';
 
 
 const routes: Routes = [
@@ -23,7 +24,8 @@ const routes: Routes = [
   { path: 'producers', component: ProducerComponent },
   { path: 'producers/new', component: AddProducerComponent },
   { path: 'producers/edit/:id', component: EditProducerComponent },
-  { path: 'product/new', component: AddProductComponent }
+  { path: 'product/new', component: AddProductComponent },
+  { path: 'product/edit/:id', component: EditProductComponent }
 ];
 
 @NgModule({

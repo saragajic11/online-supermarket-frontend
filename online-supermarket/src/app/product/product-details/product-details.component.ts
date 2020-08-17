@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ProductService } from 'src/app/service/product.service';
 import { Product } from 'src/app/model/product.model';
 import { DomSanitizer } from '@angular/platform-browser';
@@ -15,7 +15,7 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class ProductDetailsComponent implements OnInit {
 
-  constructor(private route: ActivatedRoute, private productService: ProductService, public _DomSanitizationService: DomSanitizer, public dialog: MatDialog, private _location: Location, private toastrService: ToastrService) { }
+  constructor(private route: ActivatedRoute, private productService: ProductService, public _DomSanitizationService: DomSanitizer, public dialog: MatDialog, private _location: Location, private toastrService: ToastrService, private router: Router) { }
   barCode: string;
   product: Product;
   image: any;
@@ -34,7 +34,7 @@ export class ProductDetailsComponent implements OnInit {
   }
 
   onEditProductClicked(barCode: string) {
-
+    this.router.navigate(['product/edit/' + barCode]);
   }
 
   onDeleteProductClicked(barCode: string) {

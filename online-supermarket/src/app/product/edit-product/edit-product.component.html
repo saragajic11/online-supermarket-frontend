@@ -1,0 +1,74 @@
+<div class="row wrapper" style="margin-right: 0; margin-top: 20px;">
+    <div class="col-xs-12">
+        <form #editProductForm="ngForm" (ngSubmit)="onSubmit(editProductForm)">
+            <div class="form-group">
+                <label for="barCode">Bar code</label>
+                <input id="barCode" class="form-control" ngModel name="barCode" required [disabled]="true" />
+            </div>
+            <div class="form-group">
+                <label for="name">Product Name</label>
+                <input id="name" class="form-control" ngModel name="name" required />
+            </div>
+            <div class="form-group">
+                <label for="description">Product Description</label>
+                <input id="description" class="form-control" ngModel name="description" required />
+            </div>
+            <div class="form-group">
+                <label for="price">Product Price (RSD)</label>
+                <input id="price" class="form-control" type="number" ngModel name="price" required />
+            </div>
+            <div class="form-group">
+                <label for="amount">Available amount</label>
+                <input id="amount" class="form-control" type="number" ngModel name="amount" required />
+            </div>
+            <div class="form-group">
+                <label>On discount</label>
+                <div class="form-control">
+                    <label class="radio-inline">
+                        <input type="radio" name="onDiscount" [value]="true" ngModel (click)="isOnDiscount(true)">
+                        Yes
+                    </label>
+                    <label class="radio-inline">
+                        <input type="radio" name="onDiscount" [value]="false" ngModel style="margin-inline-start: 5px;"
+                            (click)="isOnDiscount(false)">
+                        No
+                    </label>
+                </div>
+            </div>
+            <div class="form-group" *ngIf="productIsOnDiscount">
+                <label for="discount">Discount (%)</label>
+                <input id="discount" class="form-control" type="number" ngModel name="discount" required />
+            </div>
+            <div style="text-align: center;" class="container">
+                <img [src]="selectedFileSrc" class="img-preview" />
+                <button type="button" class="btn-add btn" (click)="imageInput.click()">
+                    <span>Change image</span>
+                    <input #imageInput type="file" accept="image/*" (change)="processFile(imageInput)"
+                        style="display:none;" />
+                </button>
+            </div>
+            <div>
+                
+            </div>
+            <div class="form-group">
+                <label for="producer">Producer</label>
+                <select id="producer" name="producer" class="form-control" ngModel required>
+                    <option *ngFor="let producer of producers" [value]="producer.id"> {{producer.producerName}}</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="subcategory">Subcategory</label>
+                <select id="subcategory" name="subcategory" class="form-control" ngModel required>
+                    <option *ngFor="let subcategory of subcategories" [value]="subcategory.id"> {{subcategory.name}}
+                    </option>
+                </select>
+            </div>
+            <div style="margin-bottom: 20px; text-align: center;">
+                <button class="btn-add" type="submit" [disabled]="!editProductForm.valid">
+                    Edit Product
+                </button>
+            </div>
+        </form>
+
+    </div>
+</div>

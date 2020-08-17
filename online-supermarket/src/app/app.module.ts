@@ -28,6 +28,7 @@ import {MatDialogModule} from '@angular/material/dialog';
 import { DeleteDialogComponent } from './shared/delete-dialog/delete-dialog.component';
 import { MatButtonModule } from '@angular/material/button';
 import { AddProductComponent } from './product/add-product/add-product.component';
+import { EditProductComponent } from './product/edit-product/edit-product.component';
 
 
 @NgModule({
@@ -49,7 +50,8 @@ import { AddProductComponent } from './product/add-product/add-product.component
     ProductDetailsComponent,
     DropdownDirective,
     DeleteDialogComponent,
-    AddProductComponent
+    AddProductComponent,
+    EditProductComponent
   ],
   imports: [
     BrowserModule,

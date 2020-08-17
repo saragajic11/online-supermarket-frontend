@@ -29,4 +29,8 @@ export class ProductService {
   postProduct(product: PostProduct) {
     return this.httpClient.post("http://localhost:8083/products", product);
   }
+
+  updateProduct(barCode: string, product: PostProduct) {
+    return this.httpClient.put("http://localhost:8083/products/" + barCode, product);
+  }
 }
