@@ -20,7 +20,6 @@ export class SupplierComponent implements OnInit {
 
   ngOnInit(): void {
     this.supplierService.getAllSuppliers().subscribe(suppliers => {
-      console.log(suppliers);
       this.dataSource.data = suppliers;
     })
   }

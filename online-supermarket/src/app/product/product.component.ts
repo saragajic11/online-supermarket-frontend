@@ -20,7 +20,6 @@ export class ProductComponent implements OnInit {
       this.id = parseInt(params.get('id'));
       this.productService.getProductsByCategory(this.id).subscribe(products => {
         this.products = products;
-        console.log(products);
       })
     })
   }

@@ -17,9 +17,7 @@ export class CategoryItemComponent implements OnInit {
 
   ngOnInit(): void {
     let objectURL = 'data:image/jpeg;base64,' + this.category.categoryImage;
-    console.log(this.category.id, this.category.categoryImage);
     this.image = this._DomSanitizationService.bypassSecurityTrustUrl(objectURL);
-    console.log(this.image);
   }
 
   onCategorySelected(id: number) {

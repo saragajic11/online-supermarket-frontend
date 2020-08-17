@@ -16,7 +16,6 @@ export class ProductItemComponent implements OnInit {
   constructor(public _DomSanitizationService: DomSanitizer, private router: Router) { }
 
   ngOnInit(): void {
-    console.log("Image" , this.productItem.imageUrl);
     let objectURL = 'data:image/jpeg;base64,' + this.productItem.imageUrl;
     this.image = this._DomSanitizationService.bypassSecurityTrustUrl(objectURL);
   }

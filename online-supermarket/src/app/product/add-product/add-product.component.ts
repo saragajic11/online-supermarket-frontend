@@ -4,8 +4,6 @@ import { Producer } from 'src/app/model/producer.model';
 import { ProducerService } from 'src/app/service/producer.service';
 import { SubcategoryService } from 'src/app/service/subcategory.service';
 import { Subcategory } from 'src/app/model/subcategory.model';
-import { DomSanitizer } from '@angular/platform-browser';
-import { Product } from 'src/app/model/product.model';
 import { PostProduct } from 'src/app/model/postProduct.model';
 import { ProductService } from 'src/app/service/product.service';
 import { Location } from '@angular/common';
@@ -29,7 +27,6 @@ export class AddProductComponent implements OnInit {
   ngOnInit(): void {
     this.producerService.getAllProducers().subscribe(producers => {
       this.producers = producers;
-      console.log(this.producers);
     })
 
     this.subcategoryService.getAllSubcategories().subscribe(subcategories => {
@@ -41,10 +38,8 @@ export class AddProductComponent implements OnInit {
     const value = form.value;
     this.producerService.getProducerById(value.producer).subscribe(producer=> {
       this.selectedProducer = producer;
-      console.log(this.selectedProducer);
       this.subcategoryService.getSubcategoryById(value.subcategory).subscribe(subcategory=> {
         this.selectedSubcategory = subcategory;
-        console.log(this.selectedSubcategory);
         const newProduct = new PostProduct(value.barCode, value.name, value.description, value.price, value.amount, value.onDiscount, this.selectedProducer, this.selectedSubcategory, value.discount!= undefined ? value.discount :  null);
         const formData = new FormData();
         formData.append('file', this.selectedFile);

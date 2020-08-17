@@ -35,7 +35,6 @@ export class EditSupplierComponent implements OnInit {
   onSubmit(form: NgForm) {
     const value = form.value;
     const editedSupplier = new Supplier(value.name, value.lastName, value.contact);
-    console.log(editedSupplier);
     this.supplierService.editSupplier(editedSupplier, this.supplierId).subscribe(() => {
       this.toastrService.success("Supplier successfully updated", "Success");
       this._location.back();
