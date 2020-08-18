@@ -10,3 +10,8 @@ body{
 form {
   display: inline-block;
 }
+
+.btn:hover {
+  background-color: #4e7a70;
+}
+

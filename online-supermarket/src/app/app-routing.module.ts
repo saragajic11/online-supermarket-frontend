@@ -11,6 +11,7 @@ import { EditProducerComponent } from './producer/edit-producer/edit-producer.co
 import { ProductDetailsComponent } from './product/product-details/product-details.component';
 import { AddProductComponent } from './product/add-product/add-product.component';
 import { EditProductComponent } from './product/edit-product/edit-product.component';
+import { AuthComponent } from './auth/auth.component';
 
 
 const routes: Routes = [
@@ -25,7 +26,8 @@ const routes: Routes = [
   { path: 'producers/new', component: AddProducerComponent },
   { path: 'producers/edit/:id', component: EditProducerComponent },
   { path: 'product/new', component: AddProductComponent },
-  { path: 'product/edit/:id', component: EditProductComponent }
+  { path: 'product/edit/:id', component: EditProductComponent },
+  { path: 'auth', component: AuthComponent }
 ];
 
 @NgModule({

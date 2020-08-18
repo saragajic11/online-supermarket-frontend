@@ -39,10 +39,12 @@
                 <label for="discount">Discount (%)</label>
                 <input id="discount" class="form-control" type="number" ngModel name="discount" required />
             </div>
-            <div>
-                <label class="image-upload-container btn btn-bwm">
-                    <input #imageInput type="file" accept="image/*" (change)="processFile(imageInput)">
-                </label>
+            <div style="text-align: center;">
+                <button type="button" class="btn-manage btn" (click)="imageInput.click()">
+                    <span>Add image</span>
+                    <input #imageInput type="file" accept="image/*" (change)="processFile(imageInput)"
+                        style="display:none;" />
+                </button>
             </div>
             <div>
                 <img [src]="selectedFileSrc" *ngIf="selectedFile" class="img-preview" />
