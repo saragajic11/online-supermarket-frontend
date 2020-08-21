@@ -21,7 +21,7 @@ export class CategoryItemComponent implements OnInit {
   }
 
   onCategorySelected(id: number) {
-    this.router.navigate(['/products', id])
+    this.router.navigate(['/products/byCategory/', id])
   }
 
 }

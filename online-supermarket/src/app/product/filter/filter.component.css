@@ -1,0 +1,15 @@
+li:hover {
+    font-size: larger;
+}
+li:hover {
+    font-weight: bold;    
+}
+li:hover ul {
+    background-color: white;
+    font-weight: normal;
+    font-size: smaller;
+}
+
+li {
+    margin: 0 0 6px 0;
+}

@@ -16,12 +16,20 @@ export class ProductComponent implements OnInit {
   constructor(private router: Router, private route: ActivatedRoute, private productService: ProductService, private categoryService: CategoryService) { }
 
   ngOnInit(): void {
-    this.route.paramMap.subscribe(params => {
-      this.id = parseInt(params.get('id'));
-      this.productService.getProductsByCategory(this.id).subscribe(products => {
-        this.products = products;
+    if (this.router.url.includes('/byCategory')) {
+      this.route.paramMap.subscribe(params => {
+        this.id = parseInt(params.get('id'));
+        if (this.router.url.includes('/byCategory')) {
+          this.productService.getProductsByCategory(this.id).subscribe(products => {
+            this.products = products;
+          })
+        } else if (this.router.url.includes('/bySubcategory')) {
+          this.productService.getProductsBySubcategory(this.id).subscribe(products => {
+            this.products = products;
+          })
+        }
       })
-    })
+    }
   }
 
   onAddNewProductClicked() {

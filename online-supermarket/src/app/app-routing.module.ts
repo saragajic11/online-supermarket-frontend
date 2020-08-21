@@ -17,7 +17,8 @@ import { AuthComponent } from './auth/auth.component';
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home', component: CategoryComponent },
-  { path: 'products/:id', component: ProductComponent },
+  { path: 'products/byCategory/:id', component: ProductComponent },
+  { path: 'products/bySubcategory/:id', component: ProductComponent },
   { path: 'product/details/:id', component: ProductDetailsComponent },
   { path: 'suppliers', component: SupplierComponent },
   { path: 'suppliers/new', component: AddSupplierComponent },
