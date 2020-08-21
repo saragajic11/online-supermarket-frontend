@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Product } from '../model/product.model';
 import { PostProduct } from '../model/postProduct.model';
 
@@ -15,22 +15,27 @@ export class ProductService {
   }
 
   getProductByBarCode(barCode: string) {
-    return this.httpClient.get<Product>("http://localhost:8083/products/" + barCode);
+    const token = localStorage.getItem('token');
+    return this.httpClient.get<Product>("http://localhost:8083/products/" + barCode, {headers: new HttpHeaders().set('Authorization', token)});
   }
 
   deleteProduct(barCode: string) {
-    return this.httpClient.delete("http://localhost:8083/products/" + barCode);
+    const token = localStorage.getItem('token');
+    return this.httpClient.delete("http://localhost:8083/products/" + barCode, {headers: new HttpHeaders().set('Authorization', token)});
   }
 
   postProductImage(formData: FormData, barCode: string) {
-    return this.httpClient.put("http://localhost:8083/products/addImage/" + barCode, formData);
+    const token = localStorage.getItem('token');
+    return this.httpClient.put("http://localhost:8083/products/addImage/" + barCode, formData, {headers: new HttpHeaders().set('Authorization', token)});
   }
 
   postProduct(product: PostProduct) {
-    return this.httpClient.post("http://localhost:8083/products", product);
+    const token = localStorage.getItem('token');
+    return this.httpClient.post("http://localhost:8083/products", product, {headers: new HttpHeaders().set('Authorization', token)});
   }
 
   updateProduct(barCode: string, product: PostProduct) {
-    return this.httpClient.put("http://localhost:8083/products/" + barCode, product);
+    const token = localStorage.getItem('token');
+    return this.httpClient.put("http://localhost:8083/products/" + barCode, product, {headers: new HttpHeaders().set('Authorization', token)});
   }
 }

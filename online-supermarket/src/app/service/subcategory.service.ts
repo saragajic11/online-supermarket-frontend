@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Category } from '../model/category.model';
 import { Subcategory } from '../model/subcategory.model';
 
@@ -11,11 +11,13 @@ export class SubcategoryService {
   constructor(private httpClient: HttpClient) { }
   
   getAllSubcategories() {
-    return this.httpClient.get<Subcategory[]>("http://localhost:8083/subcategories");
+    const token = localStorage.getItem('token');
+    return this.httpClient.get<Subcategory[]>("http://localhost:8083/subcategories", {headers: new HttpHeaders().set('Authorization', token)});
   }
 
   getSubcategoryById(id: number) {
-    return this.httpClient.get<Subcategory>("http://localhost:8083/subcategories/" + id);
+    const token = localStorage.getItem('token');
+    return this.httpClient.get<Subcategory>("http://localhost:8083/subcategories/" + id, {headers: new HttpHeaders().set('Authorization', token)});
   }
 
 }
