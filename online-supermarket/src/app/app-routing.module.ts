@@ -12,6 +12,7 @@ import { ProductDetailsComponent } from './product/product-details/product-detai
 import { AddProductComponent } from './product/add-product/add-product.component';
 import { EditProductComponent } from './product/edit-product/edit-product.component';
 import { AuthComponent } from './auth/auth.component';
+import { ContactUsComponent } from './contact-us/contact-us.component';
 
 
 const routes: Routes = [
@@ -28,7 +29,8 @@ const routes: Routes = [
   { path: 'producers/edit/:id', component: EditProducerComponent },
   { path: 'product/new', component: AddProductComponent },
   { path: 'product/edit/:id', component: EditProductComponent },
-  { path: 'auth', component: AuthComponent }
+  { path: 'auth', component: AuthComponent },
+  { path: 'contact-us', component: ContactUsComponent }
 ];
 
 @NgModule({

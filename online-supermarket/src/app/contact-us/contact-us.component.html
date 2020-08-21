@@ -1,0 +1,41 @@
+<div class="container">
+    <div class="row" style="margin-top: 50px;">
+        <div class="col-sm-4">
+            <div class="contact-phone">
+                <h4>CUSTOMER SERVICE</h4>
+                <img src="../../assets/phone.png" style="width: 20px; height: 20px;" />
+                <a style="margin-inline-start: 5px;">+381 64 495 5615</a>
+                <p>Monday to Friday</p>
+                <p>09am - 05pm (Belgrade time)</p>
+            </div>
+        </div>
+        <div class="col-sm-8">
+            <div class="contact-form">
+                <h2>Have a question about a product, our company or just want to chat? Email us!</h2>
+                <p>We will be glad to assist you in any question and encourage you to share your ideas and improvements
+                    with us.</p>
+                <div class="col-xs-12 col-md-6 col-md-offset-3" style="padding: 0;">
+                    <form #contactForm="ngForm" (ngSubmit)="onSubmit(contactForm)">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input id="name" class="form-control" ngModel name="name" required />
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input id="email" class="form-control" ngModel name="email" required />
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" class="form-control" ngModel name="message" required style="height:80px"></textarea>
+                        </div>
+
+                        <div style="margin-bottom: 20px;">
+                            <button class="btn-manage" type="submit" [disabled]="!contactForm.valid">
+                                Submit
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>

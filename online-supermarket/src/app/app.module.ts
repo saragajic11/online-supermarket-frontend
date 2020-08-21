@@ -30,6 +30,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { AddProductComponent } from './product/add-product/add-product.component';
 import { EditProductComponent } from './product/edit-product/edit-product.component';
 import { AuthComponent } from './auth/auth.component';
+import { ContactUsComponent } from './contact-us/contact-us.component';
 
 
 @NgModule({
@@ -53,7 +54,8 @@ import { AuthComponent } from './auth/auth.component';
     DeleteDialogComponent,
     AddProductComponent,
     EditProductComponent,
-    AuthComponent
+    AuthComponent,
+    ContactUsComponent
   ],
   imports: [
     BrowserModule,
