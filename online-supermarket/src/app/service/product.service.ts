@@ -41,6 +41,6 @@ export class ProductService {
 
   getProductsBySubcategory(subcategoryId: number) {
     const token = localStorage.getItem('token');
-    return this.httpClient.get<Product[]>("http://localhost:8083/products/bySubcategory/" + subcategoryId)
+    return this.httpClient.get<Product[]>("http://localhost:8083/products/bySubcategory/" + subcategoryId, {headers: new HttpHeaders().set('Authorization', token)})
   }
 }
