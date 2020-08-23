@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { CustomerService } from './service/customer.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,13 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'online-supermarket';
+
+  constructor(private customerService: CustomerService) { }
+
+  ngOnInit() {
+    this.customerService.getCustomerByToken().subscribe(customer => {
+      this.customerService.emitCustomer(customer);
+    });
+  }
 }
+

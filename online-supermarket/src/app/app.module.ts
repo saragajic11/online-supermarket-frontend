@@ -31,6 +31,8 @@ import { AddProductComponent } from './product/add-product/add-product.component
 import { EditProductComponent } from './product/edit-product/edit-product.component';
 import { AuthComponent } from './auth/auth.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
+import { FavouriteProductComponent } from './favourite-product/favourite-product.component';
+import { FavouriteProductItemComponent } from './favourite-product/favourite-product-item/favourite-product-item.component';
 
 
 @NgModule({
@@ -55,7 +57,9 @@ import { ContactUsComponent } from './contact-us/contact-us.component';
     AddProductComponent,
     EditProductComponent,
     AuthComponent,
-    ContactUsComponent
+    ContactUsComponent,
+    FavouriteProductComponent,
+    FavouriteProductItemComponent
   ],
   imports: [
     BrowserModule,

@@ -13,6 +13,8 @@ import { AddProductComponent } from './product/add-product/add-product.component
 import { EditProductComponent } from './product/edit-product/edit-product.component';
 import { AuthComponent } from './auth/auth.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
+import { FavouriteProduct } from './model/favourite-product.model';
+import { FavouriteProductComponent } from './favourite-product/favourite-product.component';
 
 
 const routes: Routes = [
@@ -30,7 +32,8 @@ const routes: Routes = [
   { path: 'product/new', component: AddProductComponent },
   { path: 'product/edit/:id', component: EditProductComponent },
   { path: 'auth', component: AuthComponent },
-  { path: 'contact-us', component: ContactUsComponent }
+  { path: 'contact-us', component: ContactUsComponent },
+  { path: 'favourites', component: FavouriteProductComponent}
 ];
 
 @NgModule({
