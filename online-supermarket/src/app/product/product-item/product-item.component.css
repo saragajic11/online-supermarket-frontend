@@ -4,10 +4,11 @@ img {
     height: 150px;
     object-fit: contain;
     position: relative;
-    left: 30px;
+    left: 18px;
 }
 
-.btn-heart {
+.img-heart {
   position: relative;
   bottom: 55px;
+  object-fit: contain;
 }

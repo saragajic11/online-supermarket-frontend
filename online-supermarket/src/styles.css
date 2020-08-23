@@ -47,3 +47,11 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     height: 200px;
     object-fit: contain;
 }
+
+.btn-delete {
+    background-color: red;
+    color: white;
+    padding: 10px;
+    border: 0px;
+    border-radius: 2px;
+}
