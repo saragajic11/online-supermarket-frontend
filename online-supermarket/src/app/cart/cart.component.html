@@ -8,7 +8,7 @@
         <table style="margin-inline-start: 20px;">
             <tbody>
                 <tr>
-                    <app-cart-item *ngFor="let item of cartItems" [cartItem]="item" (onDeleteCartItem)="onCartItemDeleted()" style="width: 100%;">
+                    <app-cart-item *ngFor="let item of cartItems" [cartItem]="item" (onDeleteCartItem)="onCartItemDeleted()" (onUpdateAmount) = "onUpdateAmount()" style="width: 100%;">
                     </app-cart-item>
                 </tr>
             </tbody>

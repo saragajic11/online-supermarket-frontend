@@ -9,7 +9,7 @@
         </div>
     </td>
     <td class="quantity-box">
-        <input id="quantity" [value]="cartItem.amount" class="quantity-input" type="number">
+        <input #value id="quantity" [value]="cartItem.amount" class="quantity-input" type="number" (change)="onChangeAmount(value.value, cartItem.id)">
     </td>
     <td class="total-sum">
         <span class="money">{{totalPrice}} RSD</span>

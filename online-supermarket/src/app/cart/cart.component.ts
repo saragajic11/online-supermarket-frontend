@@ -16,6 +16,7 @@ export class CartComponent implements OnInit {
   totalPrice: number = 0;
 
   ngOnInit(): void {
+    console.log('Evo me opet');
     this.customerService.customer.subscribe(customer=> {
       if(customer) {
         this.cartService.getCartItemsByCustomer(customer.id).subscribe(cartItems=> {
@@ -23,6 +24,7 @@ export class CartComponent implements OnInit {
           this.cartItems = cartItems;
           this.numOfItems = this.cartItems.length;
           this.cartItems.forEach(element => {
+            console.log(element);
             this.totalPrice = this.totalPrice + (element.productDto.productPrice * element.amount);
           });
         })
@@ -32,6 +34,10 @@ export class CartComponent implements OnInit {
   }
 
   onCartItemDeleted() {
+    this.ngOnInit();
+  }
+
+  onUpdateAmount() {
     this.ngOnInit();
   }
 

@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Cart } from '../model/cart.model';
+import { UpdateAmount } from './update-amount.model';
 
 @Injectable({
   providedIn: 'root'
@@ -27,5 +28,10 @@ export class CartService {
   getCartItemByCustomerAndProduct(customerId: number, barCode: string) {
     const token = localStorage.getItem('token');
     return this.httpClient.get<Cart>("http://localhost:8083/cart/byCustomerAndProduct?customerId=" + customerId + "&barCode=" + barCode, { headers: new HttpHeaders().set('Authorization', token) });
+  }
+
+  updateAmount(amount: UpdateAmount, id: number) {
+    const token = localStorage.getItem('token');
+    return this.httpClient.put<Cart>("http://localhost:8083/cart/changeAmount/" + id, amount, { headers: new HttpHeaders().set('Authorization', token) })
   }
 }

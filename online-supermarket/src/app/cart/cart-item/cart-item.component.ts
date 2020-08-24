@@ -4,6 +4,7 @@ import { DomSanitizer } from '@angular/platform-browser';
 import { CartService } from 'src/app/service/cart.service';
 import { Location } from '@angular/common';
 import { ToastrService } from 'ngx-toastr';
+import { UpdateAmount } from 'src/app/service/update-amount.model';
 
 @Component({
   selector: 'app-cart-item',
@@ -18,6 +19,7 @@ export class CartItemComponent implements OnInit {
   image: any;
   totalPrice: number;
   @Output('onDeleteCartItem') onDeleteCartItem = new EventEmitter<boolean>();
+  @Output('onUpdateAmount') onUpdateAmount = new EventEmitter<boolean>();
 
   ngOnInit(): void {
     let objectURL = 'data:image/jpeg;base64,' + this.cartItem.productDto.imageUrl;
@@ -30,6 +32,15 @@ export class CartItemComponent implements OnInit {
       this.onDeleteCartItem.emit(true);
     }, error=> {
       this.toastrService.error("Error while deleting item from cart", "Error");
+    })
+  }
+
+  onChangeAmount(value, id: number) {
+    const updateAmount = new UpdateAmount(value);
+    this.cartService.updateAmount(updateAmount, id).subscribe(item=> {
+      this.onUpdateAmount.emit(true);
+    }, error => {
+      this.toastrService.error("Error occured", "Error");
     })
   }
 
