@@ -1,0 +1,27 @@
+<div class="row" style="margin-right: 0; margin-top: 20px;">
+    <div class="col" style="text-align: center;">
+        <h1>Cart</h1>
+    </div>
+</div>
+<div class="row justify-content-center" style="margin-right: 0;">
+    <div class="col-12 col-lg-7">
+        <table style="margin-inline-start: 20px;">
+            <tbody>
+                <tr>
+                    <app-cart-item *ngFor="let item of cartItems" [cartItem]="item" (onDeleteCartItem)="onCartItemDeleted()" style="width: 100%;">
+                    </app-cart-item>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="col-12 col-lg-2">
+        <div class="cart-sum">
+            <p>Total {{numOfItems}} items</p>
+            <hr>
+            <p>Total price: <span class="money">{{totalPrice}} RSD</span></p>
+            <p>
+                <button class="btn-manage">Proceed to checkout</button>
+            </p>
+        </div>
+    </div>
+</div>

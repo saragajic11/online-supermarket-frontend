@@ -1,0 +1,60 @@
+.product-img {
+    width: 170px;
+}
+
+td {
+    vertical-align: middle;
+    padding: 30px 10px;
+    border-color: #e1e1e1;
+    display: table-cell;
+    border-top: 1px solid #e1e1e1;
+    line-height: 1.42857143;
+}
+
+.product-info {
+    width: 40%;
+    padding-right: 15px;
+}
+
+p {
+    margin: 0;
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    margin-top: 8px;
+}
+
+.product-name {
+    font-size: 15px;
+    color: #333;
+}
+
+.quantity_box {
+    height: 20px;
+    position: relative;
+    width: 100px;
+    display: inline-block;
+}
+
+input {
+    width: 80px;
+    height: 44px;
+    border-radius: 5px;
+    text-align: left;
+    padding: 5px 10px;
+    overflow: visible;
+    border: 1px solid #e1e1e1 !important;
+
+}
+
+.total-sum {
+    width: 150px;
+    text-align: center;
+}
+
+.column-remove {
+    width: 70px;
+    text-align: center;
+}

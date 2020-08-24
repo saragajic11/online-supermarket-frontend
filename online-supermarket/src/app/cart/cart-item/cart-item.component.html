@@ -1,0 +1,20 @@
+<div class="container">
+    <td class="product-img" style="text-align: center;">
+        <img [src]="image" style="width: 50px; height: 60px;">
+    </td>
+    <td class="product-info">
+        <p class="product-name">{{cartItem.productDto.productName}}</p>
+        <div class="product-name">
+            <span class="money">{{cartItem.productDto.productPrice}} RSD</span>
+        </div>
+    </td>
+    <td class="quantity-box">
+        <input id="quantity" [value]="cartItem.amount" class="quantity-input" type="number">
+    </td>
+    <td class="total-sum">
+        <span class="money">{{totalPrice}} RSD</span>
+    </td>
+    <td class="column-remove">
+        <img src="../../../assets/bin.png" style="width: 20px; height: 20px; cursor: pointer;" (click)="onDeleteClicked(cartItem.id)">
+    </td>
+</div>

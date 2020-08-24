@@ -7,6 +7,10 @@ import { CustomerService } from 'src/app/service/customer.service';
 import { Customer } from 'src/app/model/customer.model';
 import { FavouriteProduct } from 'src/app/model/favourite-product.model';
 import { ToastrService } from 'ngx-toastr';
+import { MatDialog } from '@angular/material/dialog';
+import { AddToCartDialogComponent } from 'src/app/shared/add-to-cart-dialog/add-to-cart-dialog.component';
+import { Cart } from 'src/app/model/cart.model';
+import { CartService } from 'src/app/service/cart.service';
 
 @Component({
   selector: 'app-product-item',
@@ -19,10 +23,11 @@ export class ProductItemComponent implements OnInit {
   productItem: Product;
   image: any;
   isAddedToFavourites: boolean = true;
+  isAddedToCart: boolean = true;
   isCustomerLoggedIn: boolean;
   customer: Customer;
   favouriteProduct: FavouriteProduct;
-  constructor(public _DomSanitizationService: DomSanitizer, private router: Router, private favouriteProductService: FavouriteProductService, private customerService: CustomerService, private toastrService: ToastrService) { }
+  constructor(public _DomSanitizationService: DomSanitizer, private router: Router, private favouriteProductService: FavouriteProductService, private customerService: CustomerService, private toastrService: ToastrService, public dialog: MatDialog, private cartService: CartService) { }
 
   ngOnInit(): void {
     let objectURL = 'data:image/jpeg;base64,' + this.productItem.imageUrl;
@@ -37,6 +42,13 @@ export class ProductItemComponent implements OnInit {
             this.favouriteProduct = product;
           } else {
             this.isAddedToFavourites = false;
+          }
+        })
+        this.cartService.getCartItemByCustomerAndProduct(customer.id, this.productItem.barCode).subscribe(product=> {
+          if(product != null) {
+            this.isAddedToCart = true;
+          } else {
+            this.isAddedToCart = false;
           }
         })
       } else {
@@ -61,9 +73,30 @@ export class ProductItemComponent implements OnInit {
   addToFavourites(barCode: string) {
     console.log(this.productItem);
     const newFavouriteProduct = new FavouriteProduct(this.customer, this.productItem);
-    this.favouriteProductService.addToFavourites(newFavouriteProduct).subscribe(()=> {
+    this.favouriteProductService.addToFavourites(newFavouriteProduct).subscribe(() => {
       this.ngOnInit();
     }, error => {
+      this.toastrService.error("Error occured", "Error");
+    })
+  }
+
+  openDialog() {
+    const dialogRef = this.dialog.open(AddToCartDialogComponent, {
+      width: '250px'
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      if (result) {
+        this.onAddToCartClicked(result);
+      }
+    });
+  }
+
+  onAddToCartClicked(amount: number) {
+    const newCartItem = new Cart(amount, this.customer, this.productItem, null);
+    this.cartService.postCartItem(newCartItem).subscribe(()=> {
+      this.router.navigate(['/cart']);
+    }, error=> {
       this.toastrService.error("Error occured", "Error");
     })
   }
