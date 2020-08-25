@@ -13,7 +13,7 @@
                 (click)="onViewDetailsClicked(productItem.barCode)">
                 View details
             </button>
-            <button type="button" *ngIf="!isAddedToCart" class="btn btn-md button1 buttonH btn-outline-secondary" (click)="openDialog()" style="width: 8em;">
+            <button type="button" *ngIf="!isAddedToCart && isCustomerLoggedIn" class="btn btn-md button1 buttonH btn-outline-secondary" (click)="openDialog()" style="width: 8em;">
                 Add to cart
             </button>
         </div>

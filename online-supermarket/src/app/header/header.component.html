@@ -7,19 +7,19 @@
         <div class="collapse navbar-collapse">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="/home">HOME</a>
+                    <a class="nav-link" [routerLink]="['/home']">HOME</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/products/byCategory/1">CATALOG</a>
+                    <a class="nav-link" [routerLink]="['/products/byCategory/1']">CATALOG</a>
+                </li>
+                <li class="nav-item" *ngIf="isAdminLoggedIn">
+                    <a class="nav-link" [routerLink]="['/suppliers']">SUPPLIERS</a>
+                </li>
+                <li class="nav-item" *ngIf="isAdminLoggedIn">
+                    <a class="nav-link" [routerLink]="['/producers']">PRODUCERS</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/suppliers">SUPPLIERS</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/producers">PRODUCERS</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/contact-us">CONTACT US</a>
+                    <a class="nav-link" routerLink="['/contact-us']">CONTACT US</a>
                 </li>
             </ul>
             <ul class="navbar-nav ml-auto">
@@ -27,15 +27,16 @@
                     <a class="nav-link" href="#"><img src="../../assets/search.png" class="img-icon" /></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/auth"><img src="../../assets/user.png" class="img-icon" /></a>
+                    <a class="nav-link" [routerLink]="['/auth']"><img src="../../assets/user.png" class="img-icon" /></a>
                 </li>
                 <li class="nav-item" *ngIf="isCustomerLoggedIn">
-                    <a class="nav-link" href="/favourites"><img src="../../assets/heart.png" class="img-icon" /></a>
+                    <a class="nav-link" [routerLink]="['/favourites']"><img src="../../assets/heart.png" class="img-icon" /></a>
                 </li>
                 <li class="nav-item" *ngIf="isCustomerLoggedIn">
-                    <a class="nav-link" href="/cart"><img src="../../assets/cart.png" class="img-icon" /></a>
+                    <a class="nav-link" [routerLink]="['/cart']"><img src="../../assets/cart.png" class="img-icon" /></a>
                 </li>
             </ul>
         </div>
     </div>
 </nav>
+<router-outlet></router-outlet>

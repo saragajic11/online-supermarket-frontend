@@ -13,10 +13,12 @@ import { AddProductComponent } from './product/add-product/add-product.component
 import { EditProductComponent } from './product/edit-product/edit-product.component';
 import { AuthComponent } from './auth/auth.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
-import { FavouriteProduct } from './model/favourite-product.model';
 import { FavouriteProductComponent } from './favourite-product/favourite-product.component';
 import { CartComponent } from './cart/cart.component';
 import { ConfirmEmailComponent } from './confirm-email/confirm-email.component';
+import { AuthGuard } from './service/auth.guard';
+import { AdminAuthGuard } from './service/admin-auth.guard';
+
 
 
 const routes: Routes = [
@@ -25,18 +27,18 @@ const routes: Routes = [
   { path: 'products/byCategory/:id', component: ProductComponent },
   { path: 'products/bySubcategory/:id', component: ProductComponent },
   { path: 'product/details/:id', component: ProductDetailsComponent },
-  { path: 'suppliers', component: SupplierComponent },
-  { path: 'suppliers/new', component: AddSupplierComponent },
-  { path: 'suppliers/edit/:id', component: EditSupplierComponent },
-  { path: 'producers', component: ProducerComponent },
-  { path: 'producers/new', component: AddProducerComponent },
-  { path: 'producers/edit/:id', component: EditProducerComponent },
-  { path: 'product/new', component: AddProductComponent },
-  { path: 'product/edit/:id', component: EditProductComponent },
+  { path: 'suppliers', component: SupplierComponent, canActivate: [AdminAuthGuard] },
+  { path: 'suppliers/new', component: AddSupplierComponent, canActivate: [AdminAuthGuard] },
+  { path: 'suppliers/edit/:id', component: EditSupplierComponent, canActivate: [AdminAuthGuard] },
+  { path: 'producers', component: ProducerComponent, canActivate: [AdminAuthGuard]},
+  { path: 'producers/new', component: AddProducerComponent, canActivate: [AdminAuthGuard] },
+  { path: 'producers/edit/:id', component: EditProducerComponent, canActivate: [AdminAuthGuard] },
+  { path: 'product/new', component: AddProductComponent, canActivate: [AdminAuthGuard] },
+  { path: 'product/edit/:id', component: EditProductComponent, canActivate: [AdminAuthGuard] },
   { path: 'auth', component: AuthComponent },
   { path: 'contact-us', component: ContactUsComponent },
-  { path: 'favourites', component: FavouriteProductComponent },
-  { path: 'cart', component: CartComponent },
+  { path: 'favourites', component: FavouriteProductComponent, canActivate: [AuthGuard] },
+  { path: 'cart', component: CartComponent, canActivate: [AuthGuard] },
   { path: 'confirm-email/:token', component: ConfirmEmailComponent }
 ];
 

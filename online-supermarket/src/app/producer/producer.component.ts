@@ -4,6 +4,7 @@ import { Producer } from '../model/producer.model';
 import { MatTableDataSource } from '@angular/material/table';
 import { Router } from '@angular/router';
 import { Toast, ToastrService } from 'ngx-toastr';
+import { CustomerService } from '../service/customer.service';
 
 @Component({
   selector: 'app-producer',
@@ -12,16 +13,28 @@ import { Toast, ToastrService } from 'ngx-toastr';
 })
 export class ProducerComponent implements OnInit {
 
-  constructor(private producerService: ProducerService, private router: Router, private toastrService: ToastrService) { }
+  constructor(private producerService: ProducerService, private router: Router, private toastrService: ToastrService, private customerService: CustomerService) { }
   producers: Producer[];
   dataSource = new MatTableDataSource<Producer>();
-
+  isAdminLoggedIn: boolean;
   displayedColumns: string[] = ['id', 'producerName', 'producerContact', 'edit', 'delete'];
 
   ngOnInit(): void {
     this.producerService.getAllProducers().subscribe(producers => {
       this.producers = producers;
       this.dataSource.data = producers;
+    })
+
+    this.customerService.customer.subscribe(customer=> {
+      if(customer != null) {
+        if(customer.role == 'admin') {
+          this.isAdminLoggedIn = true;
+        } else {
+          this.isAdminLoggedIn = false;
+        }
+      } else {
+        this.isAdminLoggedIn = false;
+      }
     })
   }
 

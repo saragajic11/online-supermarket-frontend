@@ -4,6 +4,7 @@ import { ProductService } from '../service/product.service';
 import { Product } from '../model/product.model';
 import { Category } from '../model/category.model';
 import { CategoryService } from '../service/category.service';
+import { CustomerService } from '../service/customer.service';
 
 @Component({
   selector: 'app-product',
@@ -13,7 +14,8 @@ import { CategoryService } from '../service/category.service';
 export class ProductComponent implements OnInit {
   id: number;
   products: Product[];
-  constructor(private router: Router, private route: ActivatedRoute, private productService: ProductService, private categoryService: CategoryService) { }
+  isAdminLoggedIn: boolean = false;
+  constructor(private router: Router, private route: ActivatedRoute, private productService: ProductService, private categoryService: CategoryService, private customerService: CustomerService) { }
 
   ngOnInit(): void {
     this.route.paramMap.subscribe(params => {
@@ -28,6 +30,18 @@ export class ProductComponent implements OnInit {
           this.products = products;
           console.log(products);
         })
+      }
+    })
+
+    this.customerService.customer.subscribe(customer=> {
+      if(customer != null) {
+        if(customer.role == 'admin') {
+          this.isAdminLoggedIn = true;
+        } else {
+          this.isAdminLoggedIn = false;
+        }
+      } else {
+        this.isAdminLoggedIn = false;
       }
     })
 

@@ -7,6 +7,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { DeleteDialogComponent } from 'src/app/shared/delete-dialog/delete-dialog.component';
 import { Location } from '@angular/common';
 import { ToastrService } from 'ngx-toastr';
+import { CustomerService } from 'src/app/service/customer.service';
 
 @Component({
   selector: 'app-product-details',
@@ -15,10 +16,11 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class ProductDetailsComponent implements OnInit {
 
-  constructor(private route: ActivatedRoute, private productService: ProductService, public _DomSanitizationService: DomSanitizer, public dialog: MatDialog, private _location: Location, private toastrService: ToastrService, private router: Router) { }
+  constructor(private route: ActivatedRoute, private productService: ProductService, public _DomSanitizationService: DomSanitizer, public dialog: MatDialog, private _location: Location, private toastrService: ToastrService, private router: Router, private customerService: CustomerService) { }
   barCode: string;
   product: Product;
   image: any;
+  isAdminLoggedIn: boolean;
 
   ngOnInit(): void {
     this.route.paramMap.subscribe(params => {
@@ -29,6 +31,18 @@ export class ProductDetailsComponent implements OnInit {
           let objectURL = 'data:image/jpeg;base64,' + this.product.imageUrl;
           this.image = this._DomSanitizationService.bypassSecurityTrustUrl(objectURL);
         })
+      }
+    })
+
+    this.customerService.customer.subscribe(customer=> {
+      if(customer != null) {
+        if(customer.role == 'admin') {
+          this.isAdminLoggedIn = true;
+        } else {
+          this.isAdminLoggedIn = false;
+        }
+      } else {
+        this.isAdminLoggedIn = false;
       }
     })
   }

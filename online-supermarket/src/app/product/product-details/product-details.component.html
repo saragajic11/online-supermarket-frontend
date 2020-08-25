@@ -21,7 +21,7 @@
                 <h2>Description:</h2>
                 <h3 class="data">{{product?.productDescription}}</h3>
             </div>
-            <div class="dropdown" style="margin-bottom: 70px; margin-top: 20px;">
+            <div class="dropdown" style="margin-bottom: 70px; margin-top: 20px;" *ngIf="isAdminLoggedIn">
                 <button type="button" class="btn-manage dropdown-toggle" data-toggle="dropdown" id="dropdownMenuButton" >
                     Manage <span class="caret"></span>
                 </button>
