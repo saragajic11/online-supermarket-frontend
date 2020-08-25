@@ -16,6 +16,7 @@ import { ContactUsComponent } from './contact-us/contact-us.component';
 import { FavouriteProduct } from './model/favourite-product.model';
 import { FavouriteProductComponent } from './favourite-product/favourite-product.component';
 import { CartComponent } from './cart/cart.component';
+import { ConfirmEmailComponent } from './confirm-email/confirm-email.component';
 
 
 const routes: Routes = [
@@ -35,7 +36,8 @@ const routes: Routes = [
   { path: 'auth', component: AuthComponent },
   { path: 'contact-us', component: ContactUsComponent },
   { path: 'favourites', component: FavouriteProductComponent },
-  { path: 'cart', component: CartComponent }
+  { path: 'cart', component: CartComponent },
+  { path: 'confirm-email/:token', component: ConfirmEmailComponent }
 ];
 
 @NgModule({

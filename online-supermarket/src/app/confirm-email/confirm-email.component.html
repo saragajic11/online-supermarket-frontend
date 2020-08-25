@@ -1,0 +1,7 @@
+<div class="row justify-content-center" style="margin-right: 0; margin-top: 20px;">
+    <div class="col-xs-12" style="text-align: center;">
+        <p class="success" *ngIf="isSuccessfullyConfirmed">Confirmation successful. Proceed to <a
+                href="/auth">login</a></p>
+        <p class="error" *ngIf="!isSuccessfullyConfirmed">Error</p>
+    </div>
+</div>
