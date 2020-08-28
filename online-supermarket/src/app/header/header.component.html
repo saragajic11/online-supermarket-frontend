@@ -24,10 +24,14 @@
             </ul>
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="#"><img src="../../assets/search.png" class="img-icon" /></a>
+                    <img src="../../assets/search_black.png" class="fa fa-search fa-fw text-muted position-absolute pl-3" style="width: 30px; height: 20px; margin-top: 10px; padding: 3px">
+                    <input type="text" class="search" placeholder="Search products" (keyup)="updateSearch($event.target.value)">
                 </li>
-                <li class="nav-item">
+                <li class="nav-item" *ngIf="!isCustomerLoggedIn">
                     <a class="nav-link" [routerLink]="['/auth']"><img src="../../assets/user.png" class="img-icon" /></a>
+                </li>
+                <li class="nav-item" *ngIf="isCustomerLoggedIn" (click)="onLogoutClicked()">
+                    <a class="nav-link" [routerLink]="['/auth']"><img src="../../assets/logout.png" class="img-icon" /></a>
                 </li>
                 <li class="nav-item" *ngIf="isCustomerLoggedIn">
                     <a class="nav-link" [routerLink]="['/favourites']"><img src="../../assets/heart.png" class="img-icon" /></a>
@@ -39,4 +43,3 @@
         </div>
     </div>
 </nav>
-<router-outlet></router-outlet>

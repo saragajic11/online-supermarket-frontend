@@ -38,7 +38,8 @@ import { CartItemComponent } from './cart/cart-item/cart-item.component';
 import { AddToCartDialogComponent } from './shared/add-to-cart-dialog/add-to-cart-dialog.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
-import { ConfirmEmailComponent } from './confirm-email/confirm-email.component'
+import { ConfirmEmailComponent } from './confirm-email/confirm-email.component';
+import { SearchResultComponent } from './search-result/search-result.component'
 
 
 @NgModule({
@@ -69,7 +70,8 @@ import { ConfirmEmailComponent } from './confirm-email/confirm-email.component'
     CartComponent,
     CartItemComponent,
     AddToCartDialogComponent,
-    ConfirmEmailComponent
+    ConfirmEmailComponent,
+    SearchResultComponent
   ],
   imports: [
     BrowserModule,

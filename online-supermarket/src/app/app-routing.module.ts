@@ -18,6 +18,7 @@ import { CartComponent } from './cart/cart.component';
 import { ConfirmEmailComponent } from './confirm-email/confirm-email.component';
 import { AuthGuard } from './service/auth.guard';
 import { AdminAuthGuard } from './service/admin-auth.guard';
+import { SearchResultComponent } from './search-result/search-result.component';
 
 
 
@@ -30,7 +31,7 @@ const routes: Routes = [
   { path: 'suppliers', component: SupplierComponent, canActivate: [AdminAuthGuard] },
   { path: 'suppliers/new', component: AddSupplierComponent, canActivate: [AdminAuthGuard] },
   { path: 'suppliers/edit/:id', component: EditSupplierComponent, canActivate: [AdminAuthGuard] },
-  { path: 'producers', component: ProducerComponent, canActivate: [AdminAuthGuard]},
+  { path: 'producers', component: ProducerComponent, canActivate: [AdminAuthGuard] },
   { path: 'producers/new', component: AddProducerComponent, canActivate: [AdminAuthGuard] },
   { path: 'producers/edit/:id', component: EditProducerComponent, canActivate: [AdminAuthGuard] },
   { path: 'product/new', component: AddProductComponent, canActivate: [AdminAuthGuard] },
@@ -39,7 +40,9 @@ const routes: Routes = [
   { path: 'contact-us', component: ContactUsComponent },
   { path: 'favourites', component: FavouriteProductComponent, canActivate: [AuthGuard] },
   { path: 'cart', component: CartComponent, canActivate: [AuthGuard] },
-  { path: 'confirm-email/:token', component: ConfirmEmailComponent }
+  { path: 'confirm-email/:token', component: ConfirmEmailComponent },
+  { path: 'search-product', component: SearchResultComponent },
+  { path: 'search-product/:search', component: SearchResultComponent }
 ];
 
 @NgModule({

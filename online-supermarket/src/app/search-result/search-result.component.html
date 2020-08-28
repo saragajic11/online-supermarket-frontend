@@ -1,0 +1,8 @@
+<div class="row" style="margin-top: 20px; margin-right: 0;">
+    <div class="col" *ngIf="!emptyList">
+        <app-product-item *ngFor="let productEl of products" [productItem]="productEl"></app-product-item>
+    </div>
+    <div class="col" style="text-align: center;" *ngIf="emptyList">
+        <h2> There is no product with specified name.</h2>
+    </div>
+</div>
