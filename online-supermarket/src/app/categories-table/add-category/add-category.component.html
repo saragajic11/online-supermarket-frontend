@@ -1,0 +1,26 @@
+<div class="row wrapper" style="margin-right: 0; margin-top: 20px;">
+    <div class="col-xs-12">
+        <form #addCategoryForm="ngForm" (ngSubmit)="onSubmit(addCategoryForm)">
+            <div class="form-group">
+                <label for="name">Category Name</label>
+                <input id="name" class="form-control" ngModel name="name" required />
+            </div>
+            <div style="text-align: center;">
+                <button type="button" class="btn-manage btn" (click)="imageInput.click()">
+                    <span>Add image</span>
+                    <input #imageInput type="file" accept="image/*" (change)="processFile(imageInput)"
+                        style="display:none;" />
+                </button>
+            </div>
+            <div>
+                <img [src]="selectedFileSrc" *ngIf="selectedFile" class="img-preview" />
+            </div>
+            <div style="margin-bottom: 20px; text-align: center; margin-top: 20px;">
+                <button class="btn-manage" type="submit" [disabled]="!addCategoryForm.valid || !selectedFile">
+                    Add Product
+                </button>
+            </div>
+        </form>
+
+    </div>
+</div>

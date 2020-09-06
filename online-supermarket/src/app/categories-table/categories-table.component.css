@@ -1,0 +1,63 @@
+.headRow {
+    display: table-row;
+    text-align: center;
+  }
+  .table {
+    width: 80%;
+    display: table;
+    padding-right: 30px;
+    padding-left: 30px;
+  
+  }
+  .tabela {
+    margin-right: 30px;
+    margin-left:30px;
+  }
+  
+  .headers-align .mat-expansion-panel-header-title,
+  .headers-align .mat-expansion-panel-header-description {
+    flex-basis: 0;
+  }
+  
+  .headers-align .mat-expansion-panel-header-description {
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  mat-form-field {
+    margin-right: 12px;
+  }
+  
+  .mat-accordian-tabela {
+    padding-right: 30px;
+    padding-left: 20px;
+  }
+  
+  .wrapper {
+    text-align: center;
+  }
+  
+  .mat-raised-button {
+    display: inline-block;
+    margin-bottom: 10px;
+    width: auto;
+  }
+  
+  .klasa {
+    text-align: center;
+    width: 20%;
+  }
+
+  table {
+    width: 80%;
+    margin: 20px auto;
+  }
+  .wrapper {
+    text-align: center;
+  }
+  
+  .button {
+    position: absolute;
+    margin-top: 10px;
+  }
+  

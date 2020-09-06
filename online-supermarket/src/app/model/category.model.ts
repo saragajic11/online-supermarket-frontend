@@ -6,10 +6,7 @@ export class Category {
     public categoryImage: string;
     public subcategoryDtos: Subcategory[];
 
-    constructor(id: number, name: string, image: string, subcategoryDtos: Subcategory[]) {
-        this.id = id;
+    constructor(name: string) {
         this.categoryName = name;
-        this.categoryImage = image;
-        this.subcategoryDtos = subcategoryDtos;
     }
 }

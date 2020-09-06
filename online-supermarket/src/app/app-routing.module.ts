@@ -19,6 +19,9 @@ import { ConfirmEmailComponent } from './confirm-email/confirm-email.component';
 import { AuthGuard } from './service/auth.guard';
 import { AdminAuthGuard } from './service/admin-auth.guard';
 import { SearchResultComponent } from './search-result/search-result.component';
+import { CategoriesTableComponent } from './categories-table/categories-table.component';
+import { AddCategoryComponent } from './categories-table/add-category/add-category.component';
+import { EditCategoryComponent } from './categories-table/edit-category/edit-category.component';
 
 
 
@@ -42,7 +45,10 @@ const routes: Routes = [
   { path: 'cart', component: CartComponent, canActivate: [AuthGuard] },
   { path: 'confirm-email/:token', component: ConfirmEmailComponent },
   { path: 'search-product', component: SearchResultComponent },
-  { path: 'search-product/:search', component: SearchResultComponent }
+  { path: 'search-product/:search', component: SearchResultComponent },
+  { path: 'categories-table', component: CategoriesTableComponent },
+  { path: 'categories/new', component: AddCategoryComponent },
+  { path: 'categories/edit/:id', component: EditCategoryComponent }
 ];
 
 @NgModule({

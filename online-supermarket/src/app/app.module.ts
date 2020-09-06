@@ -37,9 +37,15 @@ import { CartComponent } from './cart/cart.component';
 import { CartItemComponent } from './cart/cart-item/cart-item.component';
 import { AddToCartDialogComponent } from './shared/add-to-cart-dialog/add-to-cart-dialog.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
-import {MatInputModule} from '@angular/material/input';
+import { MatInputModule } from '@angular/material/input';
 import { ConfirmEmailComponent } from './confirm-email/confirm-email.component';
-import { SearchResultComponent } from './search-result/search-result.component'
+import { SearchResultComponent } from './search-result/search-result.component';
+import { CategoriesTableComponent } from './categories-table/categories-table.component';
+import { MatMenuModule } from '@angular/material/menu'
+import { MatIconModule } from '@angular/material/icon'
+import {MatExpansionModule} from '@angular/material/expansion';
+import { AddCategoryComponent } from './categories-table/add-category/add-category.component';
+import { EditCategoryComponent } from './categories-table/edit-category/edit-category.component';
 
 
 @NgModule({
@@ -71,7 +77,10 @@ import { SearchResultComponent } from './search-result/search-result.component'
     CartItemComponent,
     AddToCartDialogComponent,
     ConfirmEmailComponent,
-    SearchResultComponent
+    SearchResultComponent,
+    CategoriesTableComponent,
+    AddCategoryComponent,
+    EditCategoryComponent
   ],
   imports: [
     BrowserModule,
@@ -85,6 +94,9 @@ import { SearchResultComponent } from './search-result/search-result.component'
     MatButtonModule,
     MatFormFieldModule,
     MatInputModule,
+    MatMenuModule,
+    MatIconModule,
+    MatExpansionModule,
     ToastrModule.forRoot()
   ],
   providers: [],
