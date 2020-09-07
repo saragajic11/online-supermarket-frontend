@@ -4,6 +4,16 @@ img {
     background-size: cover;
 }
 
+.carousel-caption {
+    left: 0px;
+    right: auto;
+    margin-inline-start: 80px;
+}
 ngb-carousel {
     outline: none;
+}
+
+.carousel-caption-paragraph {
+    color: #6493e4;
+    font-size: 40px;
 }

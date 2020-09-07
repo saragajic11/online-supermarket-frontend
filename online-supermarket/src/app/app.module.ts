@@ -46,6 +46,8 @@ import { MatIconModule } from '@angular/material/icon'
 import {MatExpansionModule} from '@angular/material/expansion';
 import { AddCategoryComponent } from './categories-table/add-category/add-category.component';
 import { EditCategoryComponent } from './categories-table/edit-category/edit-category.component';
+import { AddSubcategoryComponent } from './subcategory/add-subcategory/add-subcategory.component';
+import { EditSubcategoryComponent } from './subcategory/edit-subcategory/edit-subcategory.component';
 
 
 @NgModule({
@@ -80,7 +82,9 @@ import { EditCategoryComponent } from './categories-table/edit-category/edit-cat
     SearchResultComponent,
     CategoriesTableComponent,
     AddCategoryComponent,
-    EditCategoryComponent
+    EditCategoryComponent,
+    AddSubcategoryComponent,
+    EditSubcategoryComponent
   ],
   imports: [
     BrowserModule,

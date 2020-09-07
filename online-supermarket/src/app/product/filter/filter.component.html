@@ -1,9 +1,9 @@
 <div class="container">
-    <h3 style="margin-inline-start: 20px;" style="color: #4e7a70;">Categories</h3>
+    <h3 style="margin-inline-start: 20px;" style="color: #6493e4;">Categories</h3>
     <ul>
-        <li *ngFor="let category of categories" (click)="onCategoryClicked(category.id)" style="cursor: pointer; color: #4e7a70;">{{category.categoryName}}
+        <li *ngFor="let category of categories" (click)="onCategoryClicked(category.id)" style="cursor: pointer; color: #6493e4;">{{category.categoryName}}
             <ul>
-                <li *ngFor="let subcategory of category.subcategoryDtos" style="cursor: pointer; color: #4e7a70; margin-top: 6px;" (click)="onSubcategoryClicked(subcategory.id)">
+                <li *ngFor="let subcategory of category.subcategoryDtos" style="cursor: pointer; color: #6493e4; margin-top: 6px;" (click)="onSubcategoryClicked(subcategory.id)">
                     {{subcategory.name}}
                 </li>
             </ul>

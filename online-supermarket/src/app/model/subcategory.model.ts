@@ -5,8 +5,7 @@ export class Subcategory {
     public name: string;
     public categoryDto: Category;
 
-    constructor(id: number, name: string, categoryDto: Category) {
-        this.id = id;
+    constructor(name: string, categoryDto: Category) {
         this.name = name;
         this.categoryDto = categoryDto;
     }

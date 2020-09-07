@@ -1,6 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 .navbar-default {
-    background-color: #6bc5b2;
+    background-color: #b9cced;
     border-color: #E7E7E7;
     padding: 10px;
 }
@@ -22,7 +22,7 @@ html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 .btn-add {
-    background-color: #6bc5b2;
+    background-color: #b9cced;
     color: white;
     padding: 15px;
     border: 0px;
@@ -30,7 +30,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 }
 
 .btn-manage {
-    background-color: #6bc5b2;
+    background-color: #b9cced;
     color: white;
     padding: 10px;
     border: 0px;

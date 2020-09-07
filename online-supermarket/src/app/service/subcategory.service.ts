@@ -20,4 +20,20 @@ export class SubcategoryService {
     return this.httpClient.get<Subcategory>("http://localhost:8083/subcategories/" + id, {headers: new HttpHeaders().set('Authorization', token)});
   }
 
+  deleteSubcategory(id: number) {
+    const token = localStorage.getItem('token');
+    return this.httpClient.delete("http://localhost:8083/subcategories/" + id, {headers: new HttpHeaders().set('Authorization', token)})
+  }
+
+  postSubcategory(subcategory: Subcategory) {
+    const token = localStorage.getItem('token');
+    return this.httpClient.post("http://localhost:8083/subcategories", subcategory, {headers: new HttpHeaders().set('Authorization', token)})
+  }
+
+  updateSubcategory(subcategory: Subcategory, id: number) {
+    const token = localStorage.getItem('token');
+    return this.httpClient.put("http://localhost:8083/subcategories/" + id, subcategory, {headers: new HttpHeaders().set('Authorization', token)});
+  
+  }
+
 }
