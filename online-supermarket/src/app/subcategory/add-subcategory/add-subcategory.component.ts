@@ -27,7 +27,6 @@ export class AddSubcategoryComponent implements OnInit {
   onSubmit(form: NgForm) {
     const value = form.value;
     this.categoryService.getCategoryById(value.category).subscribe(category=> {
-      console.log(category);
       const newSubcategory = new Subcategory(value.name, category);
       this.subcategoryService.postSubcategory(newSubcategory).subscribe(()=> {
         this._location.back();

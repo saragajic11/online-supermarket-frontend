@@ -1,0 +1,9 @@
+<h1 mat-dialog-title>Confirm purchase</h1>
+<div mat-dialog-content>
+    <p>Please confirm your purchase by clicking CONFIRM button.</p>
+    <p>Total price: {{data.price}} RSD</p>
+</div>
+<div mat-dialog-actions>
+    <button mat-button (click)="cancel()">CANCEL</button>
+    <button mat-button cdkFocusInitial (click)="confirm()">CONFIRM</button>
+</div>

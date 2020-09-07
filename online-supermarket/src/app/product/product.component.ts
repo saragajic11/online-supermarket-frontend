@@ -25,10 +25,8 @@ export class ProductComponent implements OnInit {
           this.products = products;
         })
       } else if (this.router.url.includes('/bySubcategory')) {
-        console.log("CAO 2");
         this.productService.getProductsBySubcategory(this.id).subscribe(products => {
           this.products = products;
-          console.log(products);
         })
       }
     })

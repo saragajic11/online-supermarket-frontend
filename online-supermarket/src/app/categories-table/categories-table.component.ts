@@ -61,7 +61,6 @@ export class CategoriesTableComponent implements OnInit {
   openedCategory(id: number) {
     this.clickedCategoryId = id;
     this.categoryService.getCategoryById(id).subscribe(category => {
-      console.log(category.subcategoryDtos);
       this.subcategories = category.subcategoryDtos;
       //mozda dodati dijalog ako nema subcategorija
       this.dataSource = new MatTableDataSource(this.subcategories);

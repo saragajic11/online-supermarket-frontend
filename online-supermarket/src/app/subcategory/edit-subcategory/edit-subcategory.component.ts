@@ -41,7 +41,6 @@ export class EditSubcategoryComponent implements OnInit {
   onSubmit(form: NgForm) {
     const value = form.value;
     this.categoryService.getCategoryById(value.category).subscribe(category=> {
-      console.log(category);
       const updatedSubcategory = new Subcategory(value.name, category);
       this.subcategoryService.updateSubcategory(updatedSubcategory, this.id).subscribe(()=> {
         this.toastrService.success("Successfully updated subcategory", "Success");

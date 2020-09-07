@@ -25,7 +25,6 @@ export class HeaderComponent implements OnInit {
         this.isCustomerLoggedIn = false;
         this.isAdminLoggedIn = false;
       } else {
-        console.log(customer.role);
         this.isCustomerLoggedIn = true;
         if(customer.role == 'admin') {
           this.isAdminLoggedIn = true;

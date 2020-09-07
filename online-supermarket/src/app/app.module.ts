@@ -48,6 +48,7 @@ import { AddCategoryComponent } from './categories-table/add-category/add-catego
 import { EditCategoryComponent } from './categories-table/edit-category/edit-category.component';
 import { AddSubcategoryComponent } from './subcategory/add-subcategory/add-subcategory.component';
 import { EditSubcategoryComponent } from './subcategory/edit-subcategory/edit-subcategory.component';
+import { ConfirmPurchaseDialogComponent } from './shared/confirm-purchase-dialog/confirm-purchase-dialog.component';
 
 
 @NgModule({
@@ -84,7 +85,8 @@ import { EditSubcategoryComponent } from './subcategory/edit-subcategory/edit-su
     AddCategoryComponent,
     EditCategoryComponent,
     AddSubcategoryComponent,
-    EditSubcategoryComponent
+    EditSubcategoryComponent,
+    ConfirmPurchaseDialogComponent
   ],
   imports: [
     BrowserModule,

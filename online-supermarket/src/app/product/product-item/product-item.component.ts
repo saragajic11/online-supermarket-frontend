@@ -71,7 +71,6 @@ export class ProductItemComponent implements OnInit {
   }
 
   addToFavourites(barCode: string) {
-    console.log(this.productItem);
     const newFavouriteProduct = new FavouriteProduct(this.customer, this.productItem);
     this.favouriteProductService.addToFavourites(newFavouriteProduct).subscribe(() => {
       this.ngOnInit();

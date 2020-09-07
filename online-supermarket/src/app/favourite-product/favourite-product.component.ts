@@ -16,7 +16,6 @@ export class FavouriteProductComponent implements OnInit {
   listOfFavouriteProducts: FavouriteProduct[];
 
   ngOnInit(): void {
-    console.log('CAO');
     this.customerService.customer.subscribe(customer => {
       if(customer) {
         this.loggedCustomer = customer;
