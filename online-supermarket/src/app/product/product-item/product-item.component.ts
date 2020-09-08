@@ -33,7 +33,7 @@ export class ProductItemComponent implements OnInit {
   ngOnInit(): void {
     let objectURL = 'data:image/jpeg;base64,' + this.productItem.imageUrl;
     this.image = this._DomSanitizationService.bypassSecurityTrustUrl(objectURL);
-    if(this.productItem.amount > 0) {
+    if (this.productItem.amount > 0) {
       this.unavailable = false;
     } else {
       this.unavailable = true;
@@ -50,8 +50,8 @@ export class ProductItemComponent implements OnInit {
             this.isAddedToFavourites = false;
           }
         })
-        this.cartService.getCartItemByCustomerAndProduct(customer.id, this.productItem.barCode).subscribe(product=> {
-          if(product != null) {
+        this.cartService.getCartItemByCustomerAndProduct(customer.id, this.productItem.barCode).subscribe(product => {
+          if (product != null) {
             this.isAddedToCart = true;
           } else {
             this.isAddedToCart = false;
@@ -99,9 +99,13 @@ export class ProductItemComponent implements OnInit {
 
   onAddToCartClicked(amount: number) {
     const newCartItem = new Cart(amount, this.customer, this.productItem, null);
-    this.cartService.postCartItem(newCartItem).subscribe(()=> {
-      this.router.navigate(['/cart']);
-    }, error=> {
+    this.cartService.postCartItem(newCartItem).subscribe(item => {
+      if (item == null) {
+        this.toastrService.error("Insufficient number of articles on stock", "Error");
+      } else {
+        this.router.navigate(['/cart']);
+      }
+    }, error => {
       this.toastrService.error("Error occured", "Error");
     })
   }
