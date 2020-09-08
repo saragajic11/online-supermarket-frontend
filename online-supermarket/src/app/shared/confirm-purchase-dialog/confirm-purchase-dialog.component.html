@@ -1,9 +1,9 @@
-<h1 mat-dialog-title>Confirm purchase</h1>
+<p mat-dialog-title class="montserrat-medium" style="font-size: 20px;">Confirm purchase</p>
 <div mat-dialog-content>
-    <p>Please confirm your purchase by clicking CONFIRM button.</p>
-    <p>Total price: {{data.price}} RSD</p>
+    <p class="montserrat-medium">Please confirm your purchase by clicking CONFIRM button.</p>
+    <p class="montserrat-medium">Total price: {{data.price}} RSD</p>
 </div>
 <div mat-dialog-actions>
-    <button mat-button (click)="cancel()">CANCEL</button>
-    <button mat-button cdkFocusInitial (click)="confirm()">CONFIRM</button>
+    <button mat-button (click)="cancel()" class="montserrat-medium">CANCEL</button>
+    <button mat-button cdkFocusInitial (click)="confirm()" class="montserrat-medium">CONFIRM</button>
 </div>

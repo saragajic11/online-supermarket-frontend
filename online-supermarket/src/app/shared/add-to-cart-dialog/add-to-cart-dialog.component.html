@@ -1,12 +1,12 @@
-<h1 mat-dialog-title>Hi!</h1>
+<p mat-dialog-title class="montserrat-medium" style="font-size: 20px;">Hi!</p>
 <div mat-dialog-content>
-  <p>How many articles do you want to add to cart?</p>
+  <p class="montserrat-medium">How many articles do you want to add to cart?</p>
   <mat-form-field>
-    <mat-label>Quantity</mat-label>
-    <input matInput type="number" pattern="^[1-9]+[0-9]*$" [(ngModel)]="itemQuantity">
+    <mat-label class="montserrat-medium">Quantity</mat-label>
+    <input class="montserrat-medium" matInput type="number" pattern="^[1-9]+[0-9]*$" [(ngModel)]="itemQuantity">
   </mat-form-field>
 </div>
 <div mat-dialog-actions>
-  <button mat-button (click)="cancel()">Cancel</button>
-  <button mat-button mat-dialog-close (click)="confirm(itemQuantity)" *ngIf='itemQuantity>0'   cdkFocusInitial>Confirm</button>
+  <button mat-button (click)="cancel()" class="montserrat-medium">CANCEL</button>
+  <button mat-button mat-dialog-close (click)="confirm(itemQuantity)" *ngIf='itemQuantity>0' class="montserrat-medium" cdkFocusInitial>CONFIRM</button>
 </div>
