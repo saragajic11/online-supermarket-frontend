@@ -14,6 +14,7 @@ export class FavouriteProductComponent implements OnInit {
   constructor(private customerService: CustomerService, private favouriteProductService: FavouriteProductService) { }
   loggedCustomer: Customer;
   listOfFavouriteProducts: FavouriteProduct[];
+  emptyList: boolean;
 
   ngOnInit(): void {
     this.customerService.customer.subscribe(customer => {
@@ -21,6 +22,11 @@ export class FavouriteProductComponent implements OnInit {
         this.loggedCustomer = customer;
         this.favouriteProductService.getFavouriteProductsByCustomerId(customer.id).subscribe(products=> {
           this.listOfFavouriteProducts = products;
+          if(this.listOfFavouriteProducts.length == 0) {
+            this.emptyList = true;
+          } else {
+            this.emptyList = false;
+          }
         })
       }
     })

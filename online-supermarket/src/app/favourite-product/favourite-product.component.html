@@ -1,9 +1,10 @@
 <div class="row" style="margin-right: 0; margin-top: 20px;">
     <div class="col" style="text-align: center;">
-        <h1>Favourite products</h1>
+        <h1 *ngIf="!emptyList">Favourite products</h1>
+        <h2 *ngIf="emptyList">Favourite products is empty</h2>
     </div>
 </div>
-<div class="row justify-content-center" style="margin-right: 0;" >
+<div class="row justify-content-center" style="margin-right: 0;" *ngIf="!emptyList" >
     <div class="col-md-6">
         <app-favourite-product-item *ngFor="let product of listOfFavouriteProducts" [favouriteProductItem]="product">
         </app-favourite-product-item>

@@ -21,6 +21,7 @@ export class CartComponent implements OnInit {
   numOfItems: number;
   totalPrice: number = 0;
   customerId: number;
+  emptyList: boolean;
 
   ngOnInit(): void {
     this.cartItems = [];
@@ -31,13 +32,16 @@ export class CartComponent implements OnInit {
           this.totalPrice = 0;
           console.log(cartItems);
           cartItems.forEach(element=> {
-            console.log('Prolazim kroz listu');
             if(element.billDto == null) {
               this.cartItems.push(element);
-              console.log('DODATO');
             }
           })
           this.numOfItems = this.cartItems.length;
+          if(this.cartItems.length == 0) {
+            this.emptyList = true;
+          } else {
+            this.emptyList = false;
+          }
           this.cartItems.forEach(element => {
             this.totalPrice = this.totalPrice + (element.productDto.productPrice * element.amount);
           });
