@@ -1,11 +1,11 @@
 <div class="row wrapper" style="margin-right: 0; margin-top: 20px;">
     <div class="col-xs-12">
         <form #editSubcategoryForm="ngForm" (ngSubmit)="onSubmit(editSubcategoryForm)">
-            <div class="form-group">
+            <div class="form-group montserrat-medium">
                 <label for="name">Subcategory Name</label>
                 <input id="name" class="form-control" ngModel name="name" required />
             </div>
-            <div class="form-group">
+            <div class="form-group montserrat-medium">
                 <label for="category">Category</label>
                 <select id="category" name="category" class="form-control" ngModel required>
                     <option *ngFor="let category of categories" [value]="category.id"> {{category.categoryName}}
@@ -13,8 +13,8 @@
                 </select>
             </div>
             <div style="margin-bottom: 20px; text-align: center;">
-                <button class="btn-add" type="submit" [disabled]="!editSubcategoryForm.valid">
-                    Edit Subcategory
+                <button class="btn-manage montserrat-medium" type="submit" [disabled]="!editSubcategoryForm.valid">
+                    EDIT SUBCATEGORY
                 </button>
             </div>
         </form>

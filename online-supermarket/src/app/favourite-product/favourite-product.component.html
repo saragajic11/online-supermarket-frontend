@@ -1,7 +1,7 @@
 <div class="row" style="margin-right: 0; margin-top: 20px;">
     <div class="col" style="text-align: center;">
-        <h1 *ngIf="!emptyList">Favourite products</h1>
-        <h2 *ngIf="emptyList">Favourite products is empty</h2>
+        <p *ngIf="!emptyList" class="montserrat-medium" style="font-size: 20px;">Favourite products</p>
+        <p *ngIf="emptyList" class="montserrat-medium" style="font-size: 20px;">Favourite products is empty</p>
     </div>
 </div>
 <div class="row justify-content-center" style="margin-right: 0;" *ngIf="!emptyList" >

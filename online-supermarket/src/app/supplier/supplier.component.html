@@ -1,18 +1,18 @@
 <table mat-table #table [dataSource]="dataSource" class="mat-elevation-z8" style="margin-top: 20px;">
 
     <ng-container matColumnDef="supplierName">
-        <th mat-header-cell *matHeaderCellDef>Name </th>
-        <td mat-cell *matCellDef="let element"> {{element.supplierName}} </td>
+        <th mat-header-cell *matHeaderCellDef class="montserrat-medium">Name </th>
+        <td mat-cell *matCellDef="let element" class="montserrat-medium"> {{element.supplierName}} </td>
     </ng-container>
 
     <ng-container matColumnDef="supplierLastname">
-        <th mat-header-cell *matHeaderCellDef> Lastname </th>
-        <td mat-cell *matCellDef="let element"> {{element.supplierLastname}} </td>
+        <th mat-header-cell *matHeaderCellDef class="montserrat-medium"> Lastname </th>
+        <td mat-cell *matCellDef="let element" class="montserrat-medium"> {{element.supplierLastname}} </td>
     </ng-container>
 
     <ng-container matColumnDef="supplierContact">
-        <th mat-header-cell *matHeaderCellDef> Contact </th>
-        <td mat-cell *matCellDef="let element"> {{element.contact}} </td>
+        <th mat-header-cell *matHeaderCellDef class="montserrat-medium"> Contact </th>
+        <td mat-cell *matCellDef="let element" class="montserrat-medium"> {{element.contact}} </td>
     </ng-container>
 
     <ng-container matColumnDef="edit" *ngIf="isAdminLoggedIn">
@@ -32,5 +32,5 @@
 </table>
 
 <div class="row wrapper" style="margin-right: 0; margin-top: 30px;" *ngIf="isAdminLoggedIn">
-    <button class="btn-add" (click)="onAddNewSupplier()">Add new supplier</button>
+    <button class="btn-manage montserrat-medium" (click)="onAddNewSupplier()">ADD NEW SUPPLIER</button>
 </div>

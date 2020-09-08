@@ -1,51 +1,51 @@
 <div class="row wrapper" style="margin-right: 0; margin-top: 20px;">
     <div class="col-xs-12 col-md-6 col-md-offset-3">
         <form #authForm="ngForm" (ngSubmit)="onSubmit(authForm)">
-            <div class="form-group" *ngIf="!isLoginMode">
+            <div class="form-group montserrat-medium" *ngIf="!isLoginMode">
                 <label for="name">First Name</label>
                 <input id="name" class="form-control" ngModel name="name" required />
             </div>
-            <div class="form-group" *ngIf="!isLoginMode">
+            <div class="form-group montserrat-medium" *ngIf="!isLoginMode">
                 <label for="lastName">Last Name</label>
                 <input id="lastName" class="form-control" ngModel name="lastName" required />
             </div>
-            <div class="form-group">
+            <div class="form-group montserrat-medium">
                 <label for="username">Username</label>
                 <input id="username" class="form-control" ngModel name="username" required />
             </div>
 
-            <div class="form-group" *ngIf="!isLoginMode">
+            <div class="form-group montserrat-medium" *ngIf="!isLoginMode">
                 <label for="email">Email</label>
                 <input id="email" class="form-control" ngModel name="email" required />
             </div>
-            <div class="form-group" *ngIf="!isLoginMode">
+            <div class="form-group montserrat-medium" *ngIf="!isLoginMode">
                 <label for="age">Age</label>
                 <input id="age" class="form-control" ngModel name="age" type="number" required />
             </div>
-            <div class="form-group" *ngIf="!isLoginMode">
+            <div class="form-group montserrat-medium" *ngIf="!isLoginMode">
                 <label for="country">Country</label>
                 <input id="country" class="form-control" ngModel name="country" required />
             </div>
-            <div class="form-group" *ngIf="!isLoginMode">
+            <div class="form-group montserrat-medium" *ngIf="!isLoginMode">
                 <label for="city">City</label>
                 <input id="city" class="form-control" ngModel name="city" required />
             </div>
-            <div class="form-group" *ngIf="!isLoginMode">
+            <div class="form-group montserrat-medium" *ngIf="!isLoginMode">
                 <label for="street">Street</label>
                 <input id="street" class="form-control" ngModel name="street" required />
             </div>
-            <div class="form-group">
+            <div class="form-group montserrat-medium">
                 <label for="password">Password</label>
                 <input type="password" id="password" class="form-control" ngModel name="password" required
                     minlength="4" />
             </div>
             <div style="margin-bottom: 20px;">
-                <button class="btn btn-manage" type="submit" [disabled]="!authForm.valid">
-                    {{ isLoginMode ? 'Login' : 'Sign Up' }}
+                <button class="btn btn-manage montserrat-medium" type="submit" [disabled]="!authForm.valid">
+                    {{ isLoginMode ? 'LOGIN' : 'SIGN UP' }}
                 </button>
                 |
-                <button class="btn btn-manage" (click)="onSwitchMode()" type="button">
-                    Switch to {{ isLoginMode ? 'Sign Up' : 'Login' }}
+                <button class="btn btn-manage montserrat-medium" (click)="onSwitchMode()" type="button">
+                    SWITCH TO {{ isLoginMode ? 'SIGN UP' : 'LOGIN' }}
                 </button>
             </div>
         </form>

@@ -4,30 +4,30 @@
             <img [src]="image" class="image-details" style="margin-top: 10px;">
         </div>
         <div class="col-md-3" style="margin-top: 50px;">
-            <h1>{{product?.productName}}</h1>
+            <p class="montserrat-medium" style="font-size: 20px;">{{product?.productName}}</p>
             <hr>
             <div>
-                <h2>{{product?.productPrice}} RSD</h2>
+                <p class="montserrat-bold" style="font-size: 20px;">{{product?.productPrice}} RSD</p>
             </div>
-            <div>
-                <h2>Product bar code:</h2>
-                <h3 class="data">{{product?.barCode}}</h3>
+            <div style="margin-top: 20px;">
+                <p class="montserrat-bold heading" style="font-size: 20px;">Product bar code:</p>
+                <p class="data montserrat-regular" style="font-size: 20px;">{{product?.barCode}}</p>
             </div>
-            <div>
-                <h2>Product producer:</h2>
-                <h3 class="data">{{product?.producerDto?.producerName}}</h3>
+            <div style="margin-top: 20px;">
+                <p class="montserrat-bold heading" style="font-size: 20px; margin-top: 10px;">Product producer:</p>
+                <p class="data montserrat-regular" style="font-size: 20px;">{{product?.producerDto?.producerName}}</p>
             </div>
-            <div>
-                <h2>Description:</h2>
-                <h3 class="data">{{product?.productDescription}}</h3>
+            <div style="margin-top: 20px;">
+                <p class="montserrat-bold heading" style="font-size: 20px;">Description:</p>
+                <p class="data montserrat-regular" style="font-size: 20px;">{{product?.productDescription}}</p>
             </div>
             <div class="dropdown" style="margin-bottom: 70px; margin-top: 20px;" *ngIf="isAdminLoggedIn">
-                <button type="button" class="btn-manage dropdown-toggle" data-toggle="dropdown" id="dropdownMenuButton" >
-                    Manage <span class="caret"></span>
+                <button type="button" class="btn-manage dropdown-toggle montserrat-medium" data-toggle="dropdown" id="dropdownMenuButton" >
+                    MANAGE <span class="caret"></span>
                 </button>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                    <a style="cursor: pointer;" class="dropdown-item" (click)="onEditProductClicked(product.barCode)">Edit product</a>
-                    <a style="cursor: pointer;" class="dropdown-item" (click)="openDialog()">Delete product</a>
+                    <a style="cursor: pointer;" class="dropdown-item montserrat-medium" (click)="onEditProductClicked(product.barCode)">EDIT PRODUCT</a>
+                    <a style="cursor: pointer;" class="dropdown-item montserrat-medium" (click)="openDialog()">DELETE PRODUCT</a>
                 </div>
             </div>
         </div>

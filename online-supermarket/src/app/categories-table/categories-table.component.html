@@ -1,6 +1,6 @@
 <div class="row" style="margin-right: 0; margin-top: 20px;">
   <div class="col" style="text-align: center;">
-    <h1>Categories</h1>
+    <p class="montserrat-medium" style="font-size: 20px;">Categories</p>
   </div>
 </div>
 
@@ -8,17 +8,17 @@
   <mat-accordion displayMode="flat" multi class="mat-table tabela headers-align">
     <mat-expansion-panel (opened)="openedCategory(category.id)" *ngFor="let category of categories">
       <mat-expansion-panel-header>
-        <mat-panel-title>{{category.id}}</mat-panel-title>
-        <mat-panel-title>{{category.categoryName}}</mat-panel-title>
+        <mat-panel-title class="montserrat-medium">{{category.id}}</mat-panel-title>
+        <mat-panel-title class="montserrat-medium">{{category.categoryName}}</mat-panel-title>
         <mat-panel-title>
           <button (click)="onClickStopPropagation($event)" mat-button [matMenuTriggerFor]="menu" class="full-height">
             <mat-icon>more_horiz</mat-icon>
           </button>
           <mat-menu #menu="matMenu" class="full-height">
             <div id="menu-div" class="full-height">
-              <button mat-raised-button class="btn btn-success"
+              <button mat-raised-button class="btn btn-success montserrat-medium"
                 (click)="onEditCategory(category.id)">{{'EDIT' }}</button>
-              <button mat-raised-button color="warn" (click)="onDeleteCategory(category.id)">{{'DELETE'}}</button>
+              <button class="montserrat-medium" mat-raised-button color="warn" (click)="onDeleteCategory(category.id)">{{'DELETE'}}</button>
             </div>
           </mat-menu>
         </mat-panel-title>
@@ -27,14 +27,14 @@
 
         <!-- Position Column -->
         <ng-container matColumnDef="position">
-          <th mat-header-cell *matHeaderCellDef> No.</th>
-          <td mat-cell *matCellDef="let subcategory"> {{subcategory.id}}</td>
+          <th mat-header-cell *matHeaderCellDef class="montserrat-medium"> No.</th>
+          <td mat-cell *matCellDef="let subcategory" class="montserrat-medium"> {{subcategory.id}}</td>
         </ng-container>
 
         <!-- Name Column -->
         <ng-container matColumnDef="name">
-          <th mat-header-cell *matHeaderCellDef> Name</th>
-          <td mat-cell *matCellDef="let subcategory"> {{subcategory.name}}</td>
+          <th mat-header-cell *matHeaderCellDef class="montserrat-medium"> Name</th>
+          <td mat-cell *matCellDef="let subcategory" class="montserrat-medium"> {{subcategory.name}}</td>
         </ng-container>
 
         <ng-container matColumnDef="menu">
@@ -45,9 +45,9 @@
             </button>
             <mat-menu #menu="matMenu" class="full-height">
               <div id="menu-div" class="full-height">
-                <button mat-raised-button class="btn btn-success"
+                <button mat-raised-button class="btn btn-success montserrat-medium"
                   (click)="onEditSubcategory(subcategory.id)">{{'EDIT' }}</button>
-                <button mat-raised-button color="warn" (click)="onDeleteSubcategory(subcategory.id)">{{'DELETE'}}</button>
+                <button class="montserrat-medium" mat-raised-button color="warn" (click)="onDeleteSubcategory(subcategory.id)">{{'DELETE'}}</button>
               </div>
             </mat-menu>
           </td>
@@ -57,7 +57,7 @@
       </table>
       <div class="row" style="margin-right: 0;">
         <div class="col" style="text-align: center;">
-          <button class="btn-manage" (click)="onAddNewSubcategory()">Add new subcategory</button>
+          <button class="btn-manage montserrat-medium" (click)="onAddNewSubcategory()">ADD NEW SUBCATEGORY</button>
         </div>
       </div>
     </mat-expansion-panel>
@@ -66,6 +66,6 @@
 
 <div class="row" style="margin-right: 0;">
   <div class="col" style="text-align: center;">
-    <button class="btn-manage" (click)="onAddNewCategory()">Add new category</button>
+    <button class="btn-manage montserrat-medium" (click)="onAddNewCategory()">ADD NEW CATEGORY</button>
   </div>
 </div>

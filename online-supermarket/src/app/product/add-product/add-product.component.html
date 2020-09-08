@@ -1,27 +1,27 @@
 <div class="row wrapper" style="margin-right: 0; margin-top: 20px;">
     <div class="col-xs-12">
         <form #addProductForm="ngForm" (ngSubmit)="onSubmit(addProductForm)">
-            <div class="form-group">
+            <div class="form-group montserrat-medium">
                 <label for="barCode">Bar code</label>
                 <input id="barCode" class="form-control" ngModel name="barCode" required />
             </div>
-            <div class="form-group">
+            <div class="form-group montserrat-medium">
                 <label for="name">Product Name</label>
                 <input id="name" class="form-control" ngModel name="name" required />
             </div>
-            <div class="form-group">
+            <div class="form-group montserrat-medium">
                 <label for="description">Product Description</label>
                 <input id="description" class="form-control" ngModel name="description" required />
             </div>
-            <div class="form-group">
+            <div class="form-group montserrat-medium">
                 <label for="price">Product Price (RSD)</label>
                 <input id="price" class="form-control" type="number" ngModel name="price" required />
             </div>
-            <div class="form-group">
+            <div class="form-group montserrat-medium">
                 <label for="amount">Available amount</label>
                 <input id="amount" class="form-control" type="number" ngModel name="amount" required />
             </div>
-            <div class="form-group">
+            <div class="form-group montserrat-medium">
                 <label>On discount</label>
                 <div class="form-control">
                     <label class="radio-inline">
@@ -35,13 +35,13 @@
                     </label>
                 </div>
             </div>
-            <div class="form-group" *ngIf="productIsOnDiscount">
+            <div class="form-group montserrat-medium" *ngIf="productIsOnDiscount">
                 <label for="discount">Discount (%)</label>
                 <input id="discount" class="form-control" type="number" ngModel name="discount" required />
             </div>
             <div style="text-align: center;">
-                <button type="button" class="btn-manage btn" (click)="imageInput.click()">
-                    <span>Add image</span>
+                <button type="button" class="btn-manage btn montserrat-medium" (click)="imageInput.click()">
+                    <span style="font-size: 12px; padding: 6px 12px;">ADD IMAGE</span>
                     <input #imageInput type="file" accept="image/*" (change)="processFile(imageInput)"
                         style="display:none;" />
                 </button>
@@ -49,13 +49,13 @@
             <div>
                 <img [src]="selectedFileSrc" *ngIf="selectedFile" class="img-preview" />
             </div>
-            <div class="form-group">
+            <div class="form-group montserrat-medium" style="margin-top: 10px;">
                 <label for="producer">Producer</label>
                 <select id="producer" name="producer" class="form-control" ngModel required>
                     <option *ngFor="let producer of producers" [value]="producer.id"> {{producer.producerName}}</option>
                 </select>
             </div>
-            <div class="form-group">
+            <div class="form-group montserrat-medium">
                 <label for="subcategory">Subcategory</label>
                 <select id="subcategory" name="subcategory" class="form-control" ngModel required>
                     <option *ngFor="let subcategory of subcategories" [value]="subcategory.id"> {{subcategory.name}}
@@ -63,8 +63,8 @@
                 </select>
             </div>
             <div style="margin-bottom: 20px; text-align: center;">
-                <button class="btn-add" type="submit" [disabled]="!addProductForm.valid || !selectedFile">
-                    Add Product
+                <button class="btn-manage montserrat-medium" type="submit" [disabled]="!addProductForm.valid || !selectedFile">
+                    ADD PRODUCT
                 </button>
             </div>
         </form>

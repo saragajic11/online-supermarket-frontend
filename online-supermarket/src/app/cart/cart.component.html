@@ -1,7 +1,7 @@
 <div class="row" style="margin-right: 0; margin-top: 20px;">
     <div class="col" style="text-align: center;">
-        <h1 *ngIf="!emptyList">Cart</h1>
-        <h2 *ngIf="emptyList">Cart is empty</h2>
+        <p *ngIf="!emptyList" class="montserrat-medium" style="font-size: 20px;">Cart</p>
+        <p *ngIf="emptyList" class="montserrat-medium" style="font-size: 20px;">Cart is empty</p>
     </div>
 </div>
 <div class="row justify-content-center" style="margin-right: 0;" *ngIf="!emptyList">
@@ -17,11 +17,11 @@
     </div>
     <div class="col-12 col-lg-2">
         <div class="cart-sum">
-            <p>Total {{numOfItems}} items</p>
+            <p class="montserrat-medium">Total {{numOfItems}} items</p>
             <hr>
-            <p>Total price: <span class="money">{{totalPrice}} RSD</span></p>
-            <p>
-                <button class="btn-manage" (click)="openDialog()">Proceed to checkout</button>
+            <p class="montserrat-medium">Total price: <span class="money">{{totalPrice}} RSD</span></p>
+            <p style="margin-top: 20px;">
+                <button class="btn-manage montserrat-medium" (click)="openDialog()">PROCEED TO CHECKOUT</button>
             </p>
         </div>
     </div>

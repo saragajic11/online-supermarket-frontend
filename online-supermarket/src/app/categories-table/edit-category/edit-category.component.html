@@ -1,21 +1,21 @@
 <div class="row wrapper" style="margin-right: 0; margin-top: 20px;">
     <div class="col-xs-12">
         <form #editCategoryForm="ngForm" (ngSubmit)="onSubmit(editCategoryForm)">
-            <div class="form-group">
+            <div class="form-group montserrat-medium">
                 <label for="name">Category Name</label>
                 <input id="name" class="form-control" ngModel name="name" required />
             </div>
             <div style="text-align: center;" class="container">
                 <img [src]="selectedFileSrc" class="img-preview" />
                 <button type="button" class="btn-manage btn" (click)="imageInput.click()">
-                    <span>Change image</span>
+                    <span class="montserrat-medium" style="font-size: 12sp;">CHANGE IMAGE</span>
                     <input #imageInput type="file" accept="image/*" (change)="processFile(imageInput)"
                         style="display:none;" />
                 </button>
             </div>
             <div style="margin-bottom: 20px; text-align: center; margin-top: 20px;">
-                <button class="btn-manage" type="submit" [disabled]="!editCategoryForm.valid">
-                    Edit Category
+                <button class="btn-manage montserrat-medium" type="submit" [disabled]="!editCategoryForm.valid">
+                    EDIT CATEGORY
                 </button>
             </div>
         </form>

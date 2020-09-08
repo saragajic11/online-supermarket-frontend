@@ -1,34 +1,34 @@
 <nav class="navbar navbar-expand-lg navbar-default">
     <div class="container-fluid">
         <div class="navbar-header">
-            <a href="#" class="navbar-brand">Online Supermarket</a>
+            <a href="#" class="navbar-brand montserrat-medium">Online Supermarket</a>
         </div>
 
         <div class="collapse navbar-collapse">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
-                    <a class="nav-link" [routerLink]="['/home']">HOME</a>
+                    <a class="nav-link montserrat-medium" [routerLink]="['/home']">HOME</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" [routerLink]="['/products/byCategory/1']">CATALOG</a>
+                    <a class="nav-link montserrat-medium" [routerLink]="['/products/byCategory/1']">CATALOG</a>
                 </li>
                 <li class="nav-item" *ngIf="isAdminLoggedIn">
-                    <a class="nav-link" [routerLink]="['/suppliers']">SUPPLIERS</a>
+                    <a class="nav-link montserrat-medium" [routerLink]="['/suppliers']">SUPPLIERS</a>
                 </li>
                 <li class="nav-item" *ngIf="isAdminLoggedIn">
-                    <a class="nav-link" [routerLink]="['/producers']">PRODUCERS</a>
+                    <a class="nav-link montserrat-medium" [routerLink]="['/producers']">PRODUCERS</a>
                 </li>
                 <li class="nav-item" *ngIf="isAdminLoggedIn">
-                    <a class="nav-link" [routerLink]="['/categories-table']">CATEGORIES</a>
+                    <a class="nav-link montserrat-medium" [routerLink]="['/categories-table']">CATEGORIES</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" [routerLink]="['/contact-us']">CONTACT US</a>
+                    <a class="nav-link montserrat-medium" [routerLink]="['/contact-us']">CONTACT US</a>
                 </li>
             </ul>
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
                     <img src="../../assets/search_black.png" class="fa fa-search fa-fw text-muted position-absolute pl-3" style="width: 30px; height: 20px; margin-top: 10px; padding: 3px">
-                    <input type="text" class="search" placeholder="Search products" (keyup)="updateSearch($event.target.value)">
+                    <input type="text" class="search montserrat-medium" placeholder="Search products" (keyup)="updateSearch($event.target.value)">
                 </li>
                 <li class="nav-item" *ngIf="!isCustomerLoggedIn">
                     <a class="nav-link" [routerLink]="['/auth']"><img src="../../assets/user.png" class="img-icon" /></a>

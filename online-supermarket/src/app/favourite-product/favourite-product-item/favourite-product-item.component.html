@@ -1,10 +1,10 @@
 <div class="list-group-item clearfix" style="margin-top: 20px;">
     <div class="float-left">
-        <h3 class="list-group-item-heading"> {{favouriteProductItem.productDto.productName}}</h3>
-        <p class="list-group-item-text">{{favouriteProductItem.productDto.productPrice}} RSD</p>
+        <p class="list-group-item-heading montserrat-medium" style="font-size: 17px; margin-top: 10px;"> {{favouriteProductItem.productDto.productName}}</p>
+        <p class="list-group-item-text montserrat-medium" style="font-size: 15px;">{{favouriteProductItem.productDto.productPrice}} RSD</p>
     </div>
     <span class="float-right" style="margin-top: 8px;">
         <img [src]="image" class="img-responsive" style="height: 55px; width: 50px;">
-        <button class="btn-delete" style="margin-top:8px; margin-inline-start: 20px;" (click)="onRemoveClicked(favouriteProductItem.id)">Remove</button>
-    </span>
+        <button class="btn-delete montserrat-medium" style="margin-top:8px; margin-inline-start: 20px;" (click)="onRemoveClicked(favouriteProductItem.id)">REMOVE</button>
+    </span> 
 </div>

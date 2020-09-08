@@ -55,3 +55,30 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     border: 0px;
     border-radius: 2px;
 }
+
+@font-face {
+    font-family: 'montserrat-bold';
+    src: url(assets/fonts/Montserrat-Bold.ttf)
+}
+
+.montserrat-bold {
+    font-family: montserrat-bold;
+}
+
+@font-face {
+    font-family: 'montserrat-medium';
+    src: url(assets/fonts/Montserrat-Medium.ttf)
+}
+
+.montserrat-medium {
+    font-family: montserrat-medium;
+}
+
+@font-face {
+    font-family: 'montserrat-regular';
+    src: url(assets/fonts/Montserrat-Regular.ttf)
+}
+
+.montserrat-regular {
+    font-family: montserrat-regular;
+}

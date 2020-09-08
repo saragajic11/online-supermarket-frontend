@@ -7,7 +7,7 @@ li:hover {
 li:hover ul {
     background-color: white;
     font-weight: normal;
-    font-size: smaller;
+    font-size: large;
 }
 
 li {
