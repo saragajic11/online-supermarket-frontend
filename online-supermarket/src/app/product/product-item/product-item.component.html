@@ -9,12 +9,15 @@
         <p class="card-text" style="height: 1rem;"><strong>{{productItem.productName}}</strong></p>
         <p class="card-text">{{productItem.productPrice + ",00 RSD"}}</p>
         <div class="row justify-content-center" style="text-align: center;">
-            <button type="button" class="btn btn-md btn-outline-secondary" style="width: 8em;"
+            <button type="button" class="btn btn-md btn-outline-secondary" style="width: 8em;" *ngIf="!unavailable"
                 (click)="onViewDetailsClicked(productItem.barCode)">
                 View details
             </button>
-            <button type="button" *ngIf="!isAddedToCart && isCustomerLoggedIn" class="btn btn-md button1 buttonH btn-outline-secondary" (click)="openDialog()" style="width: 8em;">
+            <button type="button" *ngIf="!isAddedToCart && isCustomerLoggedIn && !unavailable" class="btn btn-md button1 buttonH btn-outline-secondary" (click)="openDialog()" style="width: 8em;">
                 Add to cart
+            </button>
+            <button type="button" *ngIf="unavailable" class="btn-manage" style="background-color: #777777">
+                Unavailable
             </button>
         </div>
     </div>

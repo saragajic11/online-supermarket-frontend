@@ -27,11 +27,17 @@ export class ProductItemComponent implements OnInit {
   isCustomerLoggedIn: boolean;
   customer: Customer;
   favouriteProduct: FavouriteProduct;
+  unavailable: boolean;
   constructor(public _DomSanitizationService: DomSanitizer, private router: Router, private favouriteProductService: FavouriteProductService, private customerService: CustomerService, private toastrService: ToastrService, public dialog: MatDialog, private cartService: CartService) { }
 
   ngOnInit(): void {
     let objectURL = 'data:image/jpeg;base64,' + this.productItem.imageUrl;
     this.image = this._DomSanitizationService.bypassSecurityTrustUrl(objectURL);
+    if(this.productItem.amount > 0) {
+      this.unavailable = false;
+    } else {
+      this.unavailable = true;
+    }
     this.customerService.customer.subscribe(customer => {
       if (customer) {
         this.isCustomerLoggedIn = true;

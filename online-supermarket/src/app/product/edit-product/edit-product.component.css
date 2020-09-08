@@ -8,7 +8,7 @@
     left: 50%;
     transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
-    background-color: #61ac9b;
+    background-color: #b9cced;
     border: 0px;
     color: white;
     font-size: 16px;
@@ -19,7 +19,7 @@
 }
 
   .container .btn:hover {
-    background-color: #4e7a70;
+    background-color: #83aaee;
   }
   
   
