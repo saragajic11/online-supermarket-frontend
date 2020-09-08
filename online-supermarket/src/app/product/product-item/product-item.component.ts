@@ -11,6 +11,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { AddToCartDialogComponent } from 'src/app/shared/add-to-cart-dialog/add-to-cart-dialog.component';
 import { Cart } from 'src/app/model/cart.model';
 import { CartService } from 'src/app/service/cart.service';
+import { ProductService } from 'src/app/service/product.service';
 
 @Component({
   selector: 'app-product-item',
@@ -28,7 +29,7 @@ export class ProductItemComponent implements OnInit {
   customer: Customer;
   favouriteProduct: FavouriteProduct;
   unavailable: boolean;
-  constructor(public _DomSanitizationService: DomSanitizer, private router: Router, private favouriteProductService: FavouriteProductService, private customerService: CustomerService, private toastrService: ToastrService, public dialog: MatDialog, private cartService: CartService) { }
+  constructor(public _DomSanitizationService: DomSanitizer, private router: Router, private favouriteProductService: FavouriteProductService, private customerService: CustomerService, private toastrService: ToastrService, public dialog: MatDialog, private cartService: CartService, private productService: ProductService) { }
 
   ngOnInit(): void {
     let objectURL = 'data:image/jpeg;base64,' + this.productItem.imageUrl;
@@ -103,6 +104,11 @@ export class ProductItemComponent implements OnInit {
       if (item == null) {
         this.toastrService.error("Insufficient number of articles on stock", "Error");
       } else {
+        this.productService.decreaseAmount(this.productItem.barCode, amount).subscribe(()=> {
+
+        }, error => {
+          this.toastrService.error("Error occured", "Error");
+        })
         this.router.navigate(['/cart']);
       }
     }, error => {

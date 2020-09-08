@@ -47,4 +47,14 @@ export class ProductService {
   searchProduct(searchValue: string) {
     return this.httpClient.get<Product[]>("http://localhost:8083/products/byName?filter=" + searchValue);
   }
+
+  increaseAmount(barCode: string, amount: number) {
+    const token = localStorage.getItem('token');
+    return this.httpClient.put("http://localhost:8083/products/increase-amount/" + barCode, amount, {headers: new HttpHeaders().set('Authorization', token)});
+  }
+
+  decreaseAmount(barCode: string, amount: number) {
+    const token = localStorage.getItem('token');
+    return this.httpClient.put("http://localhost:8083/products/decrease-amount/" + barCode, amount, {headers: new HttpHeaders().set('Authorization', token)});
+  }
 }

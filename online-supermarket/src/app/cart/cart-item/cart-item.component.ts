@@ -5,6 +5,7 @@ import { CartService } from 'src/app/service/cart.service';
 import { Location } from '@angular/common';
 import { ToastrService } from 'ngx-toastr';
 import { UpdateAmount } from 'src/app/service/update-amount.model';
+import { ProductService } from 'src/app/service/product.service';
 
 @Component({
   selector: 'app-cart-item',
@@ -13,7 +14,7 @@ import { UpdateAmount } from 'src/app/service/update-amount.model';
 })
 export class CartItemComponent implements OnInit {
 
-  constructor(public _DomSanitizationService: DomSanitizer, private cartService: CartService, private toastrService: ToastrService) { }
+  constructor(public _DomSanitizationService: DomSanitizer, private cartService: CartService, private toastrService: ToastrService, private productService: ProductService) { }
   @Input()
   cartItem: Cart;
   image: any;
@@ -30,6 +31,11 @@ export class CartItemComponent implements OnInit {
   onDeleteClicked(id: number) {
     this.cartService.deleteCartItem(id).subscribe(()=> {
       this.onDeleteCartItem.emit(true);
+      this.productService.increaseAmount(this.cartItem.productDto.barCode, this.cartItem.amount).subscribe(()=> {
+
+      }, error => {
+        this.toastrService.error("Error occured", "Error");
+      })
     }, error=> {
       this.toastrService.error("Error while deleting item from cart", "Error");
     })
