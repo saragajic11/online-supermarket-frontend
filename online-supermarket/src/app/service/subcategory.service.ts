@@ -33,7 +33,10 @@ export class SubcategoryService {
   updateSubcategory(subcategory: Subcategory, id: number) {
     const token = localStorage.getItem('token');
     return this.httpClient.put("http://localhost:8083/subcategories/" + id, subcategory, {headers: new HttpHeaders().set('Authorization', token)});
-  
+  }
+
+  getByCategoryId(id: number) {
+    return this.httpClient.get<Subcategory[]>("http://localhost:8083/subcategories/byCategory/" + id);
   }
 
 }

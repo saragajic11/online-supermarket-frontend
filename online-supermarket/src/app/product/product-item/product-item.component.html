@@ -1,22 +1,25 @@
 <div class="card mb-4 box-shadow" style='text-align:center;width: 18rem; cursor: pointer;'>
-    <img class="card-img-top" [src]="image" height="100%" style="margin-top: 10px;">
-    <img src="../../../assets/heart_filled_blue.png" *ngIf="isAddedToFavourites && isCustomerLoggedIn" style="width: 25px; height: 25px;"
-        class="img-heart" (click)="removeFromFavourites()">
+    <img class="card-img-top" [src]="image" style="margin-top: 10px;">
+    <img src="../../../assets/heart_filled_blue.png" *ngIf="isAddedToFavourites && isCustomerLoggedIn"
+        style="width: 25px; height: 25px;" class="img-heart" (click)="removeFromFavourites()">
     <img src="../../../assets/heart_empty_black_border.png" *ngIf="!isAddedToFavourites && isCustomerLoggedIn"
         style="width: 25px; height: 25px;" class="img-heart" (click)="addToFavourites(productItem.barCode)">
 
     <div class="card-body">
-        <p class="card-text montserrat-bold" style="font-size: 17px;">{{productItem.productName}}</p>
+        <p class="card-text montserrat-bold" style="font-size: 12px;">{{productItem.productName}}</p>
         <p class="card-text montserrat-medium">{{productItem.productPrice + ",00 RSD"}}</p>
         <div class="row justify-content-center" style="text-align: center;">
-            <button type="button" class="btn btn-lg btn-outline-secondary montserrat-medium" style="font-size: 12px;" *ngIf="!unavailable"
-                (click)="onViewDetailsClicked(productItem.barCode)">
+            <button type="button" class="btn btn-lg btn-outline-secondary montserrat-medium" style="font-size: 12px;"
+                *ngIf="!unavailable" (click)="onViewDetailsClicked(productItem.barCode)">
                 VIEW DETAILS
             </button>
-            <button type="button" *ngIf="!isAddedToCart && isCustomerLoggedIn && !unavailable" class="btn btn-lg button1 buttonH btn-outline-secondary montserrat-medium" (click)="openDialog()" style=" font-size: 12px;">
+            <button type="button" *ngIf="!isAddedToCart && isCustomerLoggedIn && !unavailable"
+                class="btn btn-lg button1 buttonH btn-outline-secondary montserrat-medium" (click)="openDialog()"
+                style=" font-size: 12px;">
                 ADD TO CART
             </button>
-            <button type="button" *ngIf="unavailable" class="btn-manage montserrat-medium" style="background-color: #777777">
+            <button type="button" *ngIf="unavailable" class="btn-manage montserrat-medium"
+                style="background-color: #777777">
                 UNAVAILABLE
             </button>
         </div>

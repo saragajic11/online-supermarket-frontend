@@ -2,7 +2,7 @@
     <div class="col-md-3">
         <app-filter></app-filter>
     </div>
-    <div class="col-md-7">
+    <div class="col-md-9">
         <app-product-item *ngFor="let productEl of products" [productItem]="productEl"></app-product-item>
         <div class="row" style="margin-right: 0; margin-top: 20px;">
             <div class="col" style="text-align: center;" *ngIf="isAdminLoggedIn">
