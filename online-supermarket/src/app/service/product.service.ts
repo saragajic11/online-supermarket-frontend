@@ -15,8 +15,7 @@ export class ProductService {
   }
 
   getProductByBarCode(barCode: string) {
-    const token = localStorage.getItem('token');
-    return this.httpClient.get<Product>("http://localhost:8083/products/" + barCode, { headers: new HttpHeaders().set('Authorization', token) });
+    return this.httpClient.get<Product>("http://localhost:8083/products/" + barCode);
   }
 
   deleteProduct(barCode: string) {
@@ -40,8 +39,7 @@ export class ProductService {
   }
 
   getProductsBySubcategory(subcategoryId: number) {
-    const token = localStorage.getItem('token');
-    return this.httpClient.get<Product[]>("http://localhost:8083/products/bySubcategory/" + subcategoryId, {headers: new HttpHeaders().set('Authorization', token)})
+    return this.httpClient.get<Product[]>("http://localhost:8083/products/bySubcategory/" + subcategoryId)
   }
 
   searchProduct(searchValue: string) {

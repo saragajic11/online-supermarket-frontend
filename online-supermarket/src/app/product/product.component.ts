@@ -18,6 +18,7 @@ export class ProductComponent implements OnInit {
   constructor(private router: Router, private route: ActivatedRoute, private productService: ProductService, private categoryService: CategoryService, private customerService: CustomerService) { }
 
   ngOnInit(): void {
+    console.log("TU SMO");
     this.route.paramMap.subscribe(params => {
       this.id = parseInt(params.get('id'));
       if (this.router.url.includes('/byCategory')) {
@@ -25,7 +26,9 @@ export class ProductComponent implements OnInit {
           this.products = products;
         })
       } else if (this.router.url.includes('/bySubcategory')) {
+        console.log("sAdrzi");
         this.productService.getProductsBySubcategory(this.id).subscribe(products => {
+          console.log("CAO" + this.products);
           this.products = products;
         })
       }
